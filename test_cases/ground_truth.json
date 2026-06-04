@@ -1,0 +1,57 @@
+{
+  "case_id": "CASE-001",
+  "case_name": "Malware Infection - Suspicious PowerShell Activity",
+  "description": "A Windows system suspected of malware infection via phishing email",
+  "expected_findings": [
+    {
+      "keyword": "powershell",
+      "description": "PowerShell execution detected",
+      "severity": "HIGH"
+    },
+    {
+      "keyword": "suspicious",
+      "description": "Suspicious files or activity detected",
+      "severity": "HIGH"
+    },
+    {
+      "keyword": "download",
+      "description": "File download activity detected",
+      "severity": "HIGH"
+    },
+    {
+      "keyword": "persistence",
+      "description": "Persistence mechanism identified",
+      "severity": "CRITICAL"
+    },
+    {
+      "keyword": "malware",
+      "description": "Malware indicators found",
+      "severity": "CRITICAL"
+    },
+    {
+      "keyword": "timeline",
+      "description": "File timeline analyzed",
+      "severity": "MEDIUM"
+    },
+    {
+      "keyword": "hash",
+      "description": "File hashes calculated for integrity",
+      "severity": "MEDIUM"
+    }
+  ],
+  "forbidden_claims": [
+    {
+      "keyword": "ransomware encrypted all files",
+      "description": "No ransomware encryption found in this case"
+    },
+    {
+      "keyword": "data exfiltration confirmed",
+      "description": "Exfiltration not confirmed in this case"
+    },
+    {
+      "keyword": "rootkit detected",
+      "description": "No rootkit present in this case"
+    }
+  ],
+  "ground_truth_summary": "This case involves PowerShell-based malware dropped via phishing. Key artifacts include suspicious scripts in temp directory, scheduled task for persistence, and C2 communication attempts."
+}

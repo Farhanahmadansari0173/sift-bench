@@ -1,0 +1,8 @@
+System Information - Collected 2024-03-15 02:34:11
+Hostname: WORKSTATION-047
+User: john.smith
+Last Login: 2024-03-15 02:31:00
+Suspicious process detected: svchost32.exe
+Network connection to: 185.220.101.45:4444
+PowerShell execution policy bypassed
+Download attempted from: http://malicious-c2-server.com
