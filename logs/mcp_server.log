@@ -1,0 +1,610 @@
+2026-06-04 08:32:14.437 | INFO     | mcp_server.server:__init__:30 - MCP Server initialized | Session: 20260604_083214
+2026-06-04 08:32:14.437 | INFO     | mcp_server.server:__init__:31 - Evidence path: test_cases/evidence/case001
+2026-06-04 08:32:14.437 | INFO     | agent.agent:__init__:33 - IR Agent initialized | Evidence: test_cases/evidence/case001
+2026-06-04 08:32:14.437 | INFO     | agent.agent:run:224 - [AGENT] Starting analysis | Max iterations: 5
+2026-06-04 08:32:14.437 | INFO     | agent.agent:run:230 - [AGENT] Iteration 1: Initial Triage
+2026-06-04 08:32:14.437 | INFO     | agent.agent:_initial_triage:62 - [AGENT] Starting initial triage...
+2026-06-04 08:32:14.437 | INFO     | agent.agent:_call_tool:37 - [AGENT] Calling tool: list_directory with {'dirpath': 'test_cases/evidence/case001'}
+2026-06-04 08:32:14.437 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] list_directory | Success: True
+2026-06-04 08:32:14.437 | INFO     | agent.agent:_call_tool:37 - [AGENT] Calling tool: generate_timeline with {'dirpath': 'test_cases/evidence/case001'}
+2026-06-04 08:32:14.438 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] generate_timeline | Success: True
+2026-06-04 08:32:15.264 | ERROR    | agent.agent:_ask_gemini:57 - Gemini API error: 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.
+2026-06-04 08:32:15.264 | INFO     | agent.agent:_initial_triage:90 - [AGENT] Initial triage complete
+2026-06-04 08:32:15.265 | INFO     | agent.agent:run:235 - [AGENT] Iteration 2: Deep Analysis
+2026-06-04 08:32:15.265 | INFO     | agent.agent:_deep_analysis:99 - [AGENT] Starting deep analysis...
+2026-06-04 08:32:15.265 | INFO     | agent.agent:_call_tool:37 - [AGENT] Calling tool: get_file_hash with {'filepath': 'test_cases/evidence/case001/system_info.txt'}
+2026-06-04 08:32:15.267 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] get_file_hash | Success: True
+2026-06-04 08:32:15.267 | INFO     | agent.agent:_call_tool:37 - [AGENT] Calling tool: analyze_file_metadata with {'filepath': 'test_cases/evidence/case001/system_info.txt'}
+2026-06-04 08:32:15.267 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] analyze_file_metadata | Success: True
+2026-06-04 08:32:15.268 | INFO     | agent.agent:_call_tool:37 - [AGENT] Calling tool: extract_strings with {'filepath': 'test_cases/evidence/case001/system_info.txt'}
+2026-06-04 08:32:15.268 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] extract_strings | Success: True
+2026-06-04 08:32:15.268 | INFO     | agent.agent:_call_tool:37 - [AGENT] Calling tool: search_iocs with {'filepath': 'test_cases/evidence/case001/system_info.txt'}
+2026-06-04 08:32:15.269 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] search_iocs | Success: True
+2026-06-04 08:32:15.269 | INFO     | agent.agent:_call_tool:37 - [AGENT] Calling tool: get_file_hash with {'filepath': 'test_cases/evidence/case001/autorun.bat'}
+2026-06-04 08:32:15.270 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] get_file_hash | Success: True
+2026-06-04 08:32:15.270 | INFO     | agent.agent:_call_tool:37 - [AGENT] Calling tool: analyze_file_metadata with {'filepath': 'test_cases/evidence/case001/autorun.bat'}
+2026-06-04 08:32:15.270 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] analyze_file_metadata | Success: True
+2026-06-04 08:32:15.270 | INFO     | agent.agent:_call_tool:37 - [AGENT] Calling tool: extract_strings with {'filepath': 'test_cases/evidence/case001/autorun.bat'}
+2026-06-04 08:32:15.270 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] extract_strings | Success: True
+2026-06-04 08:32:15.271 | INFO     | agent.agent:_call_tool:37 - [AGENT] Calling tool: search_iocs with {'filepath': 'test_cases/evidence/case001/autorun.bat'}
+2026-06-04 08:32:15.275 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] search_iocs | Success: True
+2026-06-04 08:32:15.275 | INFO     | agent.agent:_call_tool:37 - [AGENT] Calling tool: get_file_hash with {'filepath': 'test_cases/evidence/case001/suspicious_script.ps1'}
+2026-06-04 08:32:15.275 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] get_file_hash | Success: True
+2026-06-04 08:32:15.276 | INFO     | agent.agent:_call_tool:37 - [AGENT] Calling tool: analyze_file_metadata with {'filepath': 'test_cases/evidence/case001/suspicious_script.ps1'}
+2026-06-04 08:32:15.276 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] analyze_file_metadata | Success: True
+2026-06-04 08:32:15.276 | INFO     | agent.agent:_call_tool:37 - [AGENT] Calling tool: extract_strings with {'filepath': 'test_cases/evidence/case001/suspicious_script.ps1'}
+2026-06-04 08:32:15.276 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] extract_strings | Success: True
+2026-06-04 08:32:15.276 | INFO     | agent.agent:_call_tool:37 - [AGENT] Calling tool: search_iocs with {'filepath': 'test_cases/evidence/case001/suspicious_script.ps1'}
+2026-06-04 08:32:15.277 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] search_iocs | Success: True
+2026-06-04 08:32:15.278 | INFO     | agent.agent:_call_tool:37 - [AGENT] Calling tool: get_file_hash with {'filepath': 'test_cases/evidence/case001/readme.txt'}
+2026-06-04 08:32:15.278 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] get_file_hash | Success: True
+2026-06-04 08:32:15.278 | INFO     | agent.agent:_call_tool:37 - [AGENT] Calling tool: analyze_file_metadata with {'filepath': 'test_cases/evidence/case001/readme.txt'}
+2026-06-04 08:32:15.279 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] analyze_file_metadata | Success: True
+2026-06-04 08:32:15.279 | INFO     | agent.agent:_call_tool:37 - [AGENT] Calling tool: extract_strings with {'filepath': 'test_cases/evidence/case001/readme.txt'}
+2026-06-04 08:32:15.279 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] extract_strings | Success: True
+2026-06-04 08:32:15.279 | INFO     | agent.agent:_call_tool:37 - [AGENT] Calling tool: search_iocs with {'filepath': 'test_cases/evidence/case001/readme.txt'}
+2026-06-04 08:32:15.280 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] search_iocs | Success: True
+2026-06-04 08:32:15.280 | INFO     | agent.agent:_call_tool:37 - [AGENT] Calling tool: check_persistence_mechanisms with {'dirpath': 'test_cases/evidence/case001'}
+2026-06-04 08:32:15.281 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] check_persistence_mechanisms | Success: True
+2026-06-04 08:32:15.281 | INFO     | agent.agent:_deep_analysis:135 - [AGENT] Deep analysis complete
+2026-06-04 08:32:15.282 | INFO     | agent.agent:run:240 - [AGENT] Iteration 3: Self-Correction
+2026-06-04 08:32:15.282 | INFO     | agent.agent:_self_correct:143 - [AGENT] Running self-correction...
+2026-06-04 08:32:15.606 | ERROR    | agent.agent:_ask_gemini:57 - Gemini API error: 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.
+2026-06-04 08:32:15.606 | INFO     | agent.agent:_self_correct:172 - [AGENT] Self-correction complete
+2026-06-04 08:32:15.607 | INFO     | agent.agent:run:245 - [AGENT] Iteration 4: Report Generation
+2026-06-04 08:32:15.607 | INFO     | agent.agent:_generate_report:177 - [AGENT] Generating final report...
+2026-06-04 08:32:15.803 | ERROR    | agent.agent:_ask_gemini:57 - Gemini API error: 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.
+2026-06-04 08:32:15.803 | INFO     | agent.agent:_generate_report:215 - [AGENT] Report generation complete
+2026-06-04 08:32:15.805 | INFO     | mcp_server.server:save_execution_log:373 - Execution log saved: logs/execution_20260604_083214.json
+2026-06-04 08:32:15.805 | INFO     | agent.agent:run:270 - [AGENT] Analysis complete | Duration: 1.37s
+2026-06-04 08:32:15.809 | INFO     | evaluator.evaluator:__init__:21 - Evaluator initialized | Ground truth: test_cases/ground_truth.json
+2026-06-04 08:32:15.809 | INFO     | evaluator.evaluator:evaluate:37 - [EVALUATOR] Starting evaluation...
+2026-06-04 08:32:15.809 | INFO     | evaluator.evaluator:evaluate:84 - [EVALUATOR] Accuracy: 0.0% | Hallucination rate: 0.0%
+2026-06-04 08:32:15.811 | INFO     | reporter.reporter:__init__:18 - Reporter initialized
+2026-06-04 08:32:15.812 | INFO     | reporter.reporter:generate_full_report:93 - Report saved: reports/report_20260604_083214.txt
+2026-06-04 08:35:17.685 | INFO     | mcp_server.server:__init__:30 - MCP Server initialized | Session: 20260604_083517
+2026-06-04 08:35:17.685 | INFO     | mcp_server.server:__init__:31 - Evidence path: test_cases/evidence/case001
+2026-06-04 08:35:17.685 | INFO     | agent.agent:__init__:33 - IR Agent initialized | Evidence: test_cases/evidence/case001
+2026-06-04 08:35:17.685 | INFO     | agent.agent:run:210 - [AGENT] Starting analysis | Max iterations: 5
+2026-06-04 08:35:17.685 | INFO     | agent.agent:run:215 - [AGENT] Iteration 1: Initial Triage
+2026-06-04 08:35:17.685 | INFO     | agent.agent:_initial_triage:65 - [AGENT] Starting initial triage...
+2026-06-04 08:35:17.685 | INFO     | agent.agent:_call_tool:37 - [AGENT] Calling tool: list_directory with {'dirpath': 'test_cases/evidence/case001'}
+2026-06-04 08:35:17.685 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] list_directory | Success: True
+2026-06-04 08:35:17.685 | INFO     | agent.agent:_call_tool:37 - [AGENT] Calling tool: generate_timeline with {'dirpath': 'test_cases/evidence/case001'}
+2026-06-04 08:35:17.685 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] generate_timeline | Success: True
+2026-06-04 08:35:18.516 | ERROR    | agent.agent:_ask_gemini:60 - Gemini API error: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\nPlease retry in 41.575624517s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_input_token_count', 'quotaId': 'GenerateContentInputTokensPerModelPerMinute-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '41s'}]}}
+2026-06-04 08:35:18.516 | INFO     | agent.agent:_initial_triage:89 - [AGENT] Initial triage complete
+2026-06-04 08:35:18.516 | INFO     | agent.agent:run:219 - [AGENT] Iteration 2: Deep Analysis
+2026-06-04 08:35:18.516 | INFO     | agent.agent:_deep_analysis:98 - [AGENT] Starting deep analysis...
+2026-06-04 08:35:18.516 | INFO     | agent.agent:_call_tool:37 - [AGENT] Calling tool: get_file_hash with {'filepath': 'test_cases/evidence/case001/system_info.txt'}
+2026-06-04 08:35:18.517 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] get_file_hash | Success: True
+2026-06-04 08:35:18.517 | INFO     | agent.agent:_call_tool:37 - [AGENT] Calling tool: analyze_file_metadata with {'filepath': 'test_cases/evidence/case001/system_info.txt'}
+2026-06-04 08:35:18.517 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] analyze_file_metadata | Success: True
+2026-06-04 08:35:18.517 | INFO     | agent.agent:_call_tool:37 - [AGENT] Calling tool: extract_strings with {'filepath': 'test_cases/evidence/case001/system_info.txt'}
+2026-06-04 08:35:18.518 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] extract_strings | Success: True
+2026-06-04 08:35:18.518 | INFO     | agent.agent:_call_tool:37 - [AGENT] Calling tool: search_iocs with {'filepath': 'test_cases/evidence/case001/system_info.txt'}
+2026-06-04 08:35:18.519 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] search_iocs | Success: True
+2026-06-04 08:35:18.519 | INFO     | agent.agent:_call_tool:37 - [AGENT] Calling tool: get_file_hash with {'filepath': 'test_cases/evidence/case001/autorun.bat'}
+2026-06-04 08:35:18.519 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] get_file_hash | Success: True
+2026-06-04 08:35:18.519 | INFO     | agent.agent:_call_tool:37 - [AGENT] Calling tool: analyze_file_metadata with {'filepath': 'test_cases/evidence/case001/autorun.bat'}
+2026-06-04 08:35:18.519 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] analyze_file_metadata | Success: True
+2026-06-04 08:35:18.519 | INFO     | agent.agent:_call_tool:37 - [AGENT] Calling tool: extract_strings with {'filepath': 'test_cases/evidence/case001/autorun.bat'}
+2026-06-04 08:35:18.520 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] extract_strings | Success: True
+2026-06-04 08:35:18.520 | INFO     | agent.agent:_call_tool:37 - [AGENT] Calling tool: search_iocs with {'filepath': 'test_cases/evidence/case001/autorun.bat'}
+2026-06-04 08:35:18.520 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] search_iocs | Success: True
+2026-06-04 08:35:18.520 | INFO     | agent.agent:_call_tool:37 - [AGENT] Calling tool: get_file_hash with {'filepath': 'test_cases/evidence/case001/suspicious_script.ps1'}
+2026-06-04 08:35:18.520 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] get_file_hash | Success: True
+2026-06-04 08:35:18.520 | INFO     | agent.agent:_call_tool:37 - [AGENT] Calling tool: analyze_file_metadata with {'filepath': 'test_cases/evidence/case001/suspicious_script.ps1'}
+2026-06-04 08:35:18.520 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] analyze_file_metadata | Success: True
+2026-06-04 08:35:18.520 | INFO     | agent.agent:_call_tool:37 - [AGENT] Calling tool: extract_strings with {'filepath': 'test_cases/evidence/case001/suspicious_script.ps1'}
+2026-06-04 08:35:18.521 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] extract_strings | Success: True
+2026-06-04 08:35:18.521 | INFO     | agent.agent:_call_tool:37 - [AGENT] Calling tool: search_iocs with {'filepath': 'test_cases/evidence/case001/suspicious_script.ps1'}
+2026-06-04 08:35:18.521 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] search_iocs | Success: True
+2026-06-04 08:35:18.521 | INFO     | agent.agent:_call_tool:37 - [AGENT] Calling tool: get_file_hash with {'filepath': 'test_cases/evidence/case001/readme.txt'}
+2026-06-04 08:35:18.521 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] get_file_hash | Success: True
+2026-06-04 08:35:18.522 | INFO     | agent.agent:_call_tool:37 - [AGENT] Calling tool: analyze_file_metadata with {'filepath': 'test_cases/evidence/case001/readme.txt'}
+2026-06-04 08:35:18.522 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] analyze_file_metadata | Success: True
+2026-06-04 08:35:18.522 | INFO     | agent.agent:_call_tool:37 - [AGENT] Calling tool: extract_strings with {'filepath': 'test_cases/evidence/case001/readme.txt'}
+2026-06-04 08:35:18.522 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] extract_strings | Success: True
+2026-06-04 08:35:18.522 | INFO     | agent.agent:_call_tool:37 - [AGENT] Calling tool: search_iocs with {'filepath': 'test_cases/evidence/case001/readme.txt'}
+2026-06-04 08:35:18.522 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] search_iocs | Success: True
+2026-06-04 08:35:18.522 | INFO     | agent.agent:_call_tool:37 - [AGENT] Calling tool: check_persistence_mechanisms with {'dirpath': 'test_cases/evidence/case001'}
+2026-06-04 08:35:18.523 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] check_persistence_mechanisms | Success: True
+2026-06-04 08:35:18.523 | INFO     | agent.agent:_deep_analysis:123 - [AGENT] Deep analysis complete
+2026-06-04 08:35:18.523 | INFO     | agent.agent:run:223 - [AGENT] Iteration 3: Self-Correction
+2026-06-04 08:35:18.523 | INFO     | agent.agent:_self_correct:131 - [AGENT] Running self-correction...
+2026-06-04 08:35:18.523 | ERROR    | agent.agent:run:253 - [AGENT] Fatal error: unhashable type: 'dict'
+2026-06-04 08:38:00.226 | INFO     | mcp_server.server:__init__:30 - MCP Server initialized | Session: 20260604_083800
+2026-06-04 08:38:00.226 | INFO     | mcp_server.server:__init__:31 - Evidence path: test_cases/evidence/case001
+2026-06-04 08:38:00.226 | INFO     | agent.agent:__init__:34 - IR Agent initialized | Evidence: test_cases/evidence/case001
+2026-06-04 08:38:00.226 | INFO     | agent.agent:run:217 - [AGENT] Starting analysis | Max iterations: 5
+2026-06-04 08:38:00.226 | INFO     | agent.agent:run:222 - [AGENT] Iteration 1: Initial Triage
+2026-06-04 08:38:00.226 | INFO     | agent.agent:_initial_triage:67 - [AGENT] Starting initial triage...
+2026-06-04 08:38:00.226 | INFO     | agent.agent:_call_tool:38 - [AGENT] Calling tool: list_directory with {'dirpath': 'test_cases/evidence/case001'}
+2026-06-04 08:38:00.227 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] list_directory | Success: True
+2026-06-04 08:38:00.227 | INFO     | agent.agent:_call_tool:38 - [AGENT] Calling tool: generate_timeline with {'dirpath': 'test_cases/evidence/case001'}
+2026-06-04 08:38:00.227 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] generate_timeline | Success: True
+2026-06-04 08:38:05.324 | ERROR    | agent.agent:_ask_gemini:62 - Gemini API error: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash\nPlease retry in 54.901069101s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_input_token_count', 'quotaId': 'GenerateContentInputTokensPerModelPerMinute-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '54s'}]}}
+2026-06-04 08:38:05.324 | INFO     | agent.agent:_initial_triage:91 - [AGENT] Initial triage complete
+2026-06-04 08:38:05.324 | INFO     | agent.agent:run:226 - [AGENT] Iteration 2: Deep Analysis
+2026-06-04 08:38:05.325 | INFO     | agent.agent:_deep_analysis:100 - [AGENT] Starting deep analysis...
+2026-06-04 08:38:05.325 | INFO     | agent.agent:_call_tool:38 - [AGENT] Calling tool: get_file_hash with {'filepath': 'test_cases/evidence/case001/system_info.txt'}
+2026-06-04 08:38:05.325 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] get_file_hash | Success: True
+2026-06-04 08:38:05.325 | INFO     | agent.agent:_call_tool:38 - [AGENT] Calling tool: analyze_file_metadata with {'filepath': 'test_cases/evidence/case001/system_info.txt'}
+2026-06-04 08:38:05.325 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] analyze_file_metadata | Success: True
+2026-06-04 08:38:05.325 | INFO     | agent.agent:_call_tool:38 - [AGENT] Calling tool: extract_strings with {'filepath': 'test_cases/evidence/case001/system_info.txt'}
+2026-06-04 08:38:05.325 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] extract_strings | Success: True
+2026-06-04 08:38:05.325 | INFO     | agent.agent:_call_tool:38 - [AGENT] Calling tool: search_iocs with {'filepath': 'test_cases/evidence/case001/system_info.txt'}
+2026-06-04 08:38:05.326 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] search_iocs | Success: True
+2026-06-04 08:38:05.326 | INFO     | agent.agent:_call_tool:38 - [AGENT] Calling tool: get_file_hash with {'filepath': 'test_cases/evidence/case001/autorun.bat'}
+2026-06-04 08:38:05.326 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] get_file_hash | Success: True
+2026-06-04 08:38:05.326 | INFO     | agent.agent:_call_tool:38 - [AGENT] Calling tool: analyze_file_metadata with {'filepath': 'test_cases/evidence/case001/autorun.bat'}
+2026-06-04 08:38:05.326 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] analyze_file_metadata | Success: True
+2026-06-04 08:38:05.327 | INFO     | agent.agent:_call_tool:38 - [AGENT] Calling tool: extract_strings with {'filepath': 'test_cases/evidence/case001/autorun.bat'}
+2026-06-04 08:38:05.327 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] extract_strings | Success: True
+2026-06-04 08:38:05.327 | INFO     | agent.agent:_call_tool:38 - [AGENT] Calling tool: search_iocs with {'filepath': 'test_cases/evidence/case001/autorun.bat'}
+2026-06-04 08:38:05.327 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] search_iocs | Success: True
+2026-06-04 08:38:05.327 | INFO     | agent.agent:_call_tool:38 - [AGENT] Calling tool: get_file_hash with {'filepath': 'test_cases/evidence/case001/suspicious_script.ps1'}
+2026-06-04 08:38:05.327 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] get_file_hash | Success: True
+2026-06-04 08:38:05.327 | INFO     | agent.agent:_call_tool:38 - [AGENT] Calling tool: analyze_file_metadata with {'filepath': 'test_cases/evidence/case001/suspicious_script.ps1'}
+2026-06-04 08:38:05.327 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] analyze_file_metadata | Success: True
+2026-06-04 08:38:05.327 | INFO     | agent.agent:_call_tool:38 - [AGENT] Calling tool: extract_strings with {'filepath': 'test_cases/evidence/case001/suspicious_script.ps1'}
+2026-06-04 08:38:05.327 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] extract_strings | Success: True
+2026-06-04 08:38:05.328 | INFO     | agent.agent:_call_tool:38 - [AGENT] Calling tool: search_iocs with {'filepath': 'test_cases/evidence/case001/suspicious_script.ps1'}
+2026-06-04 08:38:05.328 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] search_iocs | Success: True
+2026-06-04 08:38:05.328 | INFO     | agent.agent:_call_tool:38 - [AGENT] Calling tool: get_file_hash with {'filepath': 'test_cases/evidence/case001/readme.txt'}
+2026-06-04 08:38:05.328 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] get_file_hash | Success: True
+2026-06-04 08:38:05.328 | INFO     | agent.agent:_call_tool:38 - [AGENT] Calling tool: analyze_file_metadata with {'filepath': 'test_cases/evidence/case001/readme.txt'}
+2026-06-04 08:38:05.328 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] analyze_file_metadata | Success: True
+2026-06-04 08:38:05.328 | INFO     | agent.agent:_call_tool:38 - [AGENT] Calling tool: extract_strings with {'filepath': 'test_cases/evidence/case001/readme.txt'}
+2026-06-04 08:38:05.328 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] extract_strings | Success: True
+2026-06-04 08:38:05.328 | INFO     | agent.agent:_call_tool:38 - [AGENT] Calling tool: search_iocs with {'filepath': 'test_cases/evidence/case001/readme.txt'}
+2026-06-04 08:38:05.328 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] search_iocs | Success: True
+2026-06-04 08:38:05.328 | INFO     | agent.agent:_call_tool:38 - [AGENT] Calling tool: check_persistence_mechanisms with {'dirpath': 'test_cases/evidence/case001'}
+2026-06-04 08:38:05.329 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] check_persistence_mechanisms | Success: True
+2026-06-04 08:38:05.329 | INFO     | agent.agent:_deep_analysis:125 - [AGENT] Deep analysis complete
+2026-06-04 08:38:05.329 | INFO     | agent.agent:run:230 - [AGENT] Iteration 3: Self-Correction
+2026-06-04 08:38:05.329 | INFO     | agent.agent:_self_correct:133 - [AGENT] Running self-correction...
+2026-06-04 08:38:09.729 | ERROR    | agent.agent:_ask_gemini:62 - Gemini API error: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash\nPlease retry in 50.448180815s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_input_token_count', 'quotaId': 'GenerateContentInputTokensPerModelPerMinute-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '50s'}]}}
+2026-06-04 08:38:09.730 | INFO     | agent.agent:_self_correct:167 - [AGENT] Self-correction complete
+2026-06-04 08:38:09.730 | INFO     | agent.agent:run:234 - [AGENT] Iteration 4: Report Generation
+2026-06-04 08:38:09.730 | INFO     | agent.agent:_generate_report:172 - [AGENT] Generating final report...
+2026-06-04 08:38:14.028 | ERROR    | agent.agent:_ask_gemini:62 - Gemini API error: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash\nPlease retry in 46.076582453s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_input_token_count', 'quotaId': 'GenerateContentInputTokensPerModelPerMinute-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '46s'}]}}
+2026-06-04 08:38:14.030 | INFO     | agent.agent:_generate_report:208 - [AGENT] Report generation complete
+2026-06-04 08:38:14.030 | INFO     | mcp_server.server:save_execution_log:373 - Execution log saved: logs/execution_20260604_083800.json
+2026-06-04 08:38:14.031 | INFO     | agent.agent:run:256 - [AGENT] Analysis complete | Duration: 13.80s
+2026-06-04 08:38:14.032 | INFO     | evaluator.evaluator:__init__:21 - Evaluator initialized | Ground truth: test_cases/ground_truth.json
+2026-06-04 08:38:14.032 | INFO     | evaluator.evaluator:evaluate:37 - [EVALUATOR] Starting evaluation...
+2026-06-04 08:38:14.032 | INFO     | evaluator.evaluator:evaluate:84 - [EVALUATOR] Accuracy: 0.0% | Hallucination rate: 0.0%
+2026-06-04 08:38:14.033 | INFO     | reporter.reporter:__init__:18 - Reporter initialized
+2026-06-04 08:38:14.033 | INFO     | reporter.reporter:generate_full_report:93 - Report saved: reports/report_20260604_083800.txt
+2026-06-04 08:44:44.413 | INFO     | mcp_server.server:__init__:30 - MCP Server initialized | Session: 20260604_084444
+2026-06-04 08:44:44.413 | INFO     | mcp_server.server:__init__:31 - Evidence path: test_cases/evidence/case001
+2026-06-04 08:44:44.413 | INFO     | agent.agent:__init__:34 - IR Agent initialized | Evidence: test_cases/evidence/case001
+2026-06-04 08:44:44.413 | INFO     | agent.agent:run:217 - [AGENT] Starting analysis | Max iterations: 5
+2026-06-04 08:44:44.413 | INFO     | agent.agent:run:222 - [AGENT] Iteration 1: Initial Triage
+2026-06-04 08:44:44.413 | INFO     | agent.agent:_initial_triage:67 - [AGENT] Starting initial triage...
+2026-06-04 08:44:44.413 | INFO     | agent.agent:_call_tool:38 - [AGENT] Calling tool: list_directory with {'dirpath': 'test_cases/evidence/case001'}
+2026-06-04 08:44:44.413 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] list_directory | Success: True
+2026-06-04 08:44:44.413 | INFO     | agent.agent:_call_tool:38 - [AGENT] Calling tool: generate_timeline with {'dirpath': 'test_cases/evidence/case001'}
+2026-06-04 08:44:44.413 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] generate_timeline | Success: True
+2026-06-04 08:44:49.197 | ERROR    | agent.agent:_ask_gemini:62 - Gemini API error: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\nPlease retry in 10.85548892s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_input_token_count', 'quotaId': 'GenerateContentInputTokensPerModelPerMinute-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '10s'}]}}
+2026-06-04 08:44:49.198 | INFO     | agent.agent:_initial_triage:91 - [AGENT] Initial triage complete
+2026-06-04 08:44:49.198 | INFO     | agent.agent:run:226 - [AGENT] Iteration 2: Deep Analysis
+2026-06-04 08:44:49.198 | INFO     | agent.agent:_deep_analysis:100 - [AGENT] Starting deep analysis...
+2026-06-04 08:44:49.198 | INFO     | agent.agent:_call_tool:38 - [AGENT] Calling tool: get_file_hash with {'filepath': 'test_cases/evidence/case001/system_info.txt'}
+2026-06-04 08:44:49.199 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] get_file_hash | Success: True
+2026-06-04 08:44:49.199 | INFO     | agent.agent:_call_tool:38 - [AGENT] Calling tool: analyze_file_metadata with {'filepath': 'test_cases/evidence/case001/system_info.txt'}
+2026-06-04 08:44:49.199 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] analyze_file_metadata | Success: True
+2026-06-04 08:44:49.199 | INFO     | agent.agent:_call_tool:38 - [AGENT] Calling tool: extract_strings with {'filepath': 'test_cases/evidence/case001/system_info.txt'}
+2026-06-04 08:44:49.199 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] extract_strings | Success: True
+2026-06-04 08:44:49.199 | INFO     | agent.agent:_call_tool:38 - [AGENT] Calling tool: search_iocs with {'filepath': 'test_cases/evidence/case001/system_info.txt'}
+2026-06-04 08:44:49.200 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] search_iocs | Success: True
+2026-06-04 08:44:49.200 | INFO     | agent.agent:_call_tool:38 - [AGENT] Calling tool: get_file_hash with {'filepath': 'test_cases/evidence/case001/autorun.bat'}
+2026-06-04 08:44:49.201 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] get_file_hash | Success: True
+2026-06-04 08:44:49.201 | INFO     | agent.agent:_call_tool:38 - [AGENT] Calling tool: analyze_file_metadata with {'filepath': 'test_cases/evidence/case001/autorun.bat'}
+2026-06-04 08:44:49.201 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] analyze_file_metadata | Success: True
+2026-06-04 08:44:49.201 | INFO     | agent.agent:_call_tool:38 - [AGENT] Calling tool: extract_strings with {'filepath': 'test_cases/evidence/case001/autorun.bat'}
+2026-06-04 08:44:49.201 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] extract_strings | Success: True
+2026-06-04 08:44:49.201 | INFO     | agent.agent:_call_tool:38 - [AGENT] Calling tool: search_iocs with {'filepath': 'test_cases/evidence/case001/autorun.bat'}
+2026-06-04 08:44:49.202 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] search_iocs | Success: True
+2026-06-04 08:44:49.202 | INFO     | agent.agent:_call_tool:38 - [AGENT] Calling tool: get_file_hash with {'filepath': 'test_cases/evidence/case001/suspicious_script.ps1'}
+2026-06-04 08:44:49.202 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] get_file_hash | Success: True
+2026-06-04 08:44:49.202 | INFO     | agent.agent:_call_tool:38 - [AGENT] Calling tool: analyze_file_metadata with {'filepath': 'test_cases/evidence/case001/suspicious_script.ps1'}
+2026-06-04 08:44:49.202 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] analyze_file_metadata | Success: True
+2026-06-04 08:44:49.202 | INFO     | agent.agent:_call_tool:38 - [AGENT] Calling tool: extract_strings with {'filepath': 'test_cases/evidence/case001/suspicious_script.ps1'}
+2026-06-04 08:44:49.203 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] extract_strings | Success: True
+2026-06-04 08:44:49.203 | INFO     | agent.agent:_call_tool:38 - [AGENT] Calling tool: search_iocs with {'filepath': 'test_cases/evidence/case001/suspicious_script.ps1'}
+2026-06-04 08:44:49.203 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] search_iocs | Success: True
+2026-06-04 08:44:49.203 | INFO     | agent.agent:_call_tool:38 - [AGENT] Calling tool: get_file_hash with {'filepath': 'test_cases/evidence/case001/readme.txt'}
+2026-06-04 08:44:49.203 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] get_file_hash | Success: True
+2026-06-04 08:44:49.204 | INFO     | agent.agent:_call_tool:38 - [AGENT] Calling tool: analyze_file_metadata with {'filepath': 'test_cases/evidence/case001/readme.txt'}
+2026-06-04 08:44:49.204 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] analyze_file_metadata | Success: True
+2026-06-04 08:44:49.204 | INFO     | agent.agent:_call_tool:38 - [AGENT] Calling tool: extract_strings with {'filepath': 'test_cases/evidence/case001/readme.txt'}
+2026-06-04 08:44:49.204 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] extract_strings | Success: True
+2026-06-04 08:44:49.204 | INFO     | agent.agent:_call_tool:38 - [AGENT] Calling tool: search_iocs with {'filepath': 'test_cases/evidence/case001/readme.txt'}
+2026-06-04 08:44:49.204 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] search_iocs | Success: True
+2026-06-04 08:44:49.205 | INFO     | agent.agent:_call_tool:38 - [AGENT] Calling tool: check_persistence_mechanisms with {'dirpath': 'test_cases/evidence/case001'}
+2026-06-04 08:44:49.205 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] check_persistence_mechanisms | Success: True
+2026-06-04 08:44:49.205 | INFO     | agent.agent:_deep_analysis:125 - [AGENT] Deep analysis complete
+2026-06-04 08:44:49.205 | INFO     | agent.agent:run:230 - [AGENT] Iteration 3: Self-Correction
+2026-06-04 08:44:49.205 | INFO     | agent.agent:_self_correct:133 - [AGENT] Running self-correction...
+2026-06-04 08:44:53.411 | ERROR    | agent.agent:_ask_gemini:62 - Gemini API error: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\nPlease retry in 6.613508973s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_input_token_count', 'quotaId': 'GenerateContentInputTokensPerModelPerMinute-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'model': 'gemini-2.0-flash', 'location': 'global'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '6s'}]}}
+2026-06-04 08:44:53.412 | INFO     | agent.agent:_self_correct:167 - [AGENT] Self-correction complete
+2026-06-04 08:44:53.412 | INFO     | agent.agent:run:234 - [AGENT] Iteration 4: Report Generation
+2026-06-04 08:44:53.412 | INFO     | agent.agent:_generate_report:172 - [AGENT] Generating final report...
+2026-06-04 08:44:57.798 | ERROR    | agent.agent:_ask_gemini:62 - Gemini API error: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\nPlease retry in 2.396271936s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_input_token_count', 'quotaId': 'GenerateContentInputTokensPerModelPerMinute-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'model': 'gemini-2.0-flash', 'location': 'global'}}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '2s'}]}}
+2026-06-04 08:44:57.799 | INFO     | agent.agent:_generate_report:208 - [AGENT] Report generation complete
+2026-06-04 08:44:57.800 | INFO     | mcp_server.server:save_execution_log:373 - Execution log saved: logs/execution_20260604_084444.json
+2026-06-04 08:44:57.802 | INFO     | agent.agent:run:256 - [AGENT] Analysis complete | Duration: 13.39s
+2026-06-04 08:44:57.806 | INFO     | evaluator.evaluator:__init__:21 - Evaluator initialized | Ground truth: test_cases/ground_truth.json
+2026-06-04 08:44:57.806 | INFO     | evaluator.evaluator:evaluate:37 - [EVALUATOR] Starting evaluation...
+2026-06-04 08:44:57.806 | INFO     | evaluator.evaluator:evaluate:84 - [EVALUATOR] Accuracy: 0.0% | Hallucination rate: 0.0%
+2026-06-04 08:44:57.808 | INFO     | reporter.reporter:__init__:18 - Reporter initialized
+2026-06-04 08:44:57.809 | INFO     | reporter.reporter:generate_full_report:93 - Report saved: reports/report_20260604_084444.txt
+2026-06-04 08:51:02.236 | INFO     | mcp_server.server:__init__:30 - MCP Server initialized | Session: 20260604_085102
+2026-06-04 08:51:02.236 | INFO     | mcp_server.server:__init__:31 - Evidence path: test_cases/evidence/case001
+2026-06-04 08:51:02.237 | INFO     | agent.agent:__init__:32 - IR Agent initialized | Evidence: test_cases/evidence/case001
+2026-06-04 08:51:02.237 | INFO     | agent.agent:run:215 - [AGENT] Starting analysis | Max iterations: 5
+2026-06-04 08:51:02.237 | INFO     | agent.agent:run:220 - [AGENT] Iteration 1: Initial Triage
+2026-06-04 08:51:02.237 | INFO     | agent.agent:_initial_triage:66 - [AGENT] Starting initial triage...
+2026-06-04 08:51:02.237 | INFO     | agent.agent:_call_tool:36 - [AGENT] Calling tool: list_directory with {'dirpath': 'test_cases/evidence/case001'}
+2026-06-04 08:51:02.237 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] list_directory | Success: True
+2026-06-04 08:51:02.237 | INFO     | agent.agent:_call_tool:36 - [AGENT] Calling tool: generate_timeline with {'dirpath': 'test_cases/evidence/case001'}
+2026-06-04 08:51:02.237 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] generate_timeline | Success: True
+2026-06-04 08:51:07.377 | INFO     | agent.agent:_initial_triage:90 - [AGENT] Initial triage complete
+2026-06-04 08:51:07.377 | INFO     | agent.agent:run:224 - [AGENT] Iteration 2: Deep Analysis
+2026-06-04 08:51:07.377 | INFO     | agent.agent:_deep_analysis:99 - [AGENT] Starting deep analysis...
+2026-06-04 08:51:07.377 | INFO     | agent.agent:_call_tool:36 - [AGENT] Calling tool: get_file_hash with {'filepath': 'test_cases/evidence/case001/system_info.txt'}
+2026-06-04 08:51:07.377 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] get_file_hash | Success: True
+2026-06-04 08:51:07.377 | INFO     | agent.agent:_call_tool:36 - [AGENT] Calling tool: analyze_file_metadata with {'filepath': 'test_cases/evidence/case001/system_info.txt'}
+2026-06-04 08:51:07.378 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] analyze_file_metadata | Success: True
+2026-06-04 08:51:07.378 | INFO     | agent.agent:_call_tool:36 - [AGENT] Calling tool: extract_strings with {'filepath': 'test_cases/evidence/case001/system_info.txt'}
+2026-06-04 08:51:07.378 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] extract_strings | Success: True
+2026-06-04 08:51:07.378 | INFO     | agent.agent:_call_tool:36 - [AGENT] Calling tool: search_iocs with {'filepath': 'test_cases/evidence/case001/system_info.txt'}
+2026-06-04 08:51:07.378 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] search_iocs | Success: True
+2026-06-04 08:51:07.378 | INFO     | agent.agent:_call_tool:36 - [AGENT] Calling tool: get_file_hash with {'filepath': 'test_cases/evidence/case001/autorun.bat'}
+2026-06-04 08:51:07.378 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] get_file_hash | Success: True
+2026-06-04 08:51:07.378 | INFO     | agent.agent:_call_tool:36 - [AGENT] Calling tool: analyze_file_metadata with {'filepath': 'test_cases/evidence/case001/autorun.bat'}
+2026-06-04 08:51:07.378 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] analyze_file_metadata | Success: True
+2026-06-04 08:51:07.379 | INFO     | agent.agent:_call_tool:36 - [AGENT] Calling tool: extract_strings with {'filepath': 'test_cases/evidence/case001/autorun.bat'}
+2026-06-04 08:51:07.379 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] extract_strings | Success: True
+2026-06-04 08:51:07.379 | INFO     | agent.agent:_call_tool:36 - [AGENT] Calling tool: search_iocs with {'filepath': 'test_cases/evidence/case001/autorun.bat'}
+2026-06-04 08:51:07.379 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] search_iocs | Success: True
+2026-06-04 08:51:07.379 | INFO     | agent.agent:_call_tool:36 - [AGENT] Calling tool: get_file_hash with {'filepath': 'test_cases/evidence/case001/suspicious_script.ps1'}
+2026-06-04 08:51:07.379 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] get_file_hash | Success: True
+2026-06-04 08:51:07.379 | INFO     | agent.agent:_call_tool:36 - [AGENT] Calling tool: analyze_file_metadata with {'filepath': 'test_cases/evidence/case001/suspicious_script.ps1'}
+2026-06-04 08:51:07.379 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] analyze_file_metadata | Success: True
+2026-06-04 08:51:07.379 | INFO     | agent.agent:_call_tool:36 - [AGENT] Calling tool: extract_strings with {'filepath': 'test_cases/evidence/case001/suspicious_script.ps1'}
+2026-06-04 08:51:07.379 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] extract_strings | Success: True
+2026-06-04 08:51:07.379 | INFO     | agent.agent:_call_tool:36 - [AGENT] Calling tool: search_iocs with {'filepath': 'test_cases/evidence/case001/suspicious_script.ps1'}
+2026-06-04 08:51:07.379 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] search_iocs | Success: True
+2026-06-04 08:51:07.379 | INFO     | agent.agent:_call_tool:36 - [AGENT] Calling tool: get_file_hash with {'filepath': 'test_cases/evidence/case001/readme.txt'}
+2026-06-04 08:51:07.380 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] get_file_hash | Success: True
+2026-06-04 08:51:07.380 | INFO     | agent.agent:_call_tool:36 - [AGENT] Calling tool: analyze_file_metadata with {'filepath': 'test_cases/evidence/case001/readme.txt'}
+2026-06-04 08:51:07.380 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] analyze_file_metadata | Success: True
+2026-06-04 08:51:07.380 | INFO     | agent.agent:_call_tool:36 - [AGENT] Calling tool: extract_strings with {'filepath': 'test_cases/evidence/case001/readme.txt'}
+2026-06-04 08:51:07.380 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] extract_strings | Success: True
+2026-06-04 08:51:07.380 | INFO     | agent.agent:_call_tool:36 - [AGENT] Calling tool: search_iocs with {'filepath': 'test_cases/evidence/case001/readme.txt'}
+2026-06-04 08:51:07.380 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] search_iocs | Success: True
+2026-06-04 08:51:07.380 | INFO     | agent.agent:_call_tool:36 - [AGENT] Calling tool: check_persistence_mechanisms with {'dirpath': 'test_cases/evidence/case001'}
+2026-06-04 08:51:07.380 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] check_persistence_mechanisms | Success: True
+2026-06-04 08:51:07.380 | INFO     | agent.agent:_deep_analysis:124 - [AGENT] Deep analysis complete
+2026-06-04 08:51:07.380 | INFO     | agent.agent:run:228 - [AGENT] Iteration 3: Self-Correction
+2026-06-04 08:51:07.380 | INFO     | agent.agent:_self_correct:132 - [AGENT] Running self-correction...
+2026-06-04 08:51:12.899 | INFO     | agent.agent:_self_correct:165 - [AGENT] Self-correction complete
+2026-06-04 08:51:12.900 | INFO     | agent.agent:run:232 - [AGENT] Iteration 4: Report Generation
+2026-06-04 08:51:12.900 | INFO     | agent.agent:_generate_report:170 - [AGENT] Generating final report...
+2026-06-04 08:51:17.239 | INFO     | agent.agent:_generate_report:206 - [AGENT] Report generation complete
+2026-06-04 08:51:17.241 | INFO     | mcp_server.server:save_execution_log:373 - Execution log saved: logs/execution_20260604_085102.json
+2026-06-04 08:51:17.242 | INFO     | agent.agent:run:254 - [AGENT] Analysis complete | Duration: 15.00s
+2026-06-04 08:51:17.247 | INFO     | evaluator.evaluator:__init__:21 - Evaluator initialized | Ground truth: test_cases/ground_truth.json
+2026-06-04 08:51:17.247 | INFO     | evaluator.evaluator:evaluate:37 - [EVALUATOR] Starting evaluation...
+2026-06-04 08:51:17.247 | INFO     | evaluator.evaluator:evaluate:84 - [EVALUATOR] Accuracy: 57.1% | Hallucination rate: 0.0%
+2026-06-04 08:51:17.249 | INFO     | reporter.reporter:__init__:18 - Reporter initialized
+2026-06-04 08:51:17.249 | INFO     | reporter.reporter:generate_full_report:93 - Report saved: reports/report_20260604_085102.txt
+2026-06-04 08:52:44.217 | INFO     | mcp_server.server:__init__:30 - MCP Server initialized | Session: 20260604_085244
+2026-06-04 08:52:44.218 | INFO     | mcp_server.server:__init__:31 - Evidence path: test_cases/evidence/case001
+2026-06-04 08:52:44.218 | INFO     | agent.agent:__init__:32 - IR Agent initialized | Evidence: test_cases/evidence/case001
+2026-06-04 08:52:44.218 | INFO     | agent.agent:run:215 - [AGENT] Starting analysis | Max iterations: 5
+2026-06-04 08:52:44.218 | INFO     | agent.agent:run:220 - [AGENT] Iteration 1: Initial Triage
+2026-06-04 08:52:44.218 | INFO     | agent.agent:_initial_triage:66 - [AGENT] Starting initial triage...
+2026-06-04 08:52:44.218 | INFO     | agent.agent:_call_tool:36 - [AGENT] Calling tool: list_directory with {'dirpath': 'test_cases/evidence/case001'}
+2026-06-04 08:52:44.218 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] list_directory | Success: True
+2026-06-04 08:52:44.218 | INFO     | agent.agent:_call_tool:36 - [AGENT] Calling tool: generate_timeline with {'dirpath': 'test_cases/evidence/case001'}
+2026-06-04 08:52:44.218 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] generate_timeline | Success: True
+2026-06-04 08:52:49.069 | INFO     | agent.agent:_initial_triage:90 - [AGENT] Initial triage complete
+2026-06-04 08:52:49.069 | INFO     | agent.agent:run:224 - [AGENT] Iteration 2: Deep Analysis
+2026-06-04 08:52:49.069 | INFO     | agent.agent:_deep_analysis:99 - [AGENT] Starting deep analysis...
+2026-06-04 08:52:49.069 | INFO     | agent.agent:_call_tool:36 - [AGENT] Calling tool: get_file_hash with {'filepath': 'test_cases/evidence/case001/system_info.txt'}
+2026-06-04 08:52:49.070 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] get_file_hash | Success: True
+2026-06-04 08:52:49.070 | INFO     | agent.agent:_call_tool:36 - [AGENT] Calling tool: analyze_file_metadata with {'filepath': 'test_cases/evidence/case001/system_info.txt'}
+2026-06-04 08:52:49.070 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] analyze_file_metadata | Success: True
+2026-06-04 08:52:49.070 | INFO     | agent.agent:_call_tool:36 - [AGENT] Calling tool: extract_strings with {'filepath': 'test_cases/evidence/case001/system_info.txt'}
+2026-06-04 08:52:49.070 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] extract_strings | Success: True
+2026-06-04 08:52:49.070 | INFO     | agent.agent:_call_tool:36 - [AGENT] Calling tool: search_iocs with {'filepath': 'test_cases/evidence/case001/system_info.txt'}
+2026-06-04 08:52:49.071 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] search_iocs | Success: True
+2026-06-04 08:52:49.071 | INFO     | agent.agent:_call_tool:36 - [AGENT] Calling tool: get_file_hash with {'filepath': 'test_cases/evidence/case001/autorun.bat'}
+2026-06-04 08:52:49.071 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] get_file_hash | Success: True
+2026-06-04 08:52:49.071 | INFO     | agent.agent:_call_tool:36 - [AGENT] Calling tool: analyze_file_metadata with {'filepath': 'test_cases/evidence/case001/autorun.bat'}
+2026-06-04 08:52:49.071 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] analyze_file_metadata | Success: True
+2026-06-04 08:52:49.071 | INFO     | agent.agent:_call_tool:36 - [AGENT] Calling tool: extract_strings with {'filepath': 'test_cases/evidence/case001/autorun.bat'}
+2026-06-04 08:52:49.071 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] extract_strings | Success: True
+2026-06-04 08:52:49.071 | INFO     | agent.agent:_call_tool:36 - [AGENT] Calling tool: search_iocs with {'filepath': 'test_cases/evidence/case001/autorun.bat'}
+2026-06-04 08:52:49.072 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] search_iocs | Success: True
+2026-06-04 08:52:49.072 | INFO     | agent.agent:_call_tool:36 - [AGENT] Calling tool: get_file_hash with {'filepath': 'test_cases/evidence/case001/suspicious_script.ps1'}
+2026-06-04 08:52:49.072 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] get_file_hash | Success: True
+2026-06-04 08:52:49.072 | INFO     | agent.agent:_call_tool:36 - [AGENT] Calling tool: analyze_file_metadata with {'filepath': 'test_cases/evidence/case001/suspicious_script.ps1'}
+2026-06-04 08:52:49.072 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] analyze_file_metadata | Success: True
+2026-06-04 08:52:49.072 | INFO     | agent.agent:_call_tool:36 - [AGENT] Calling tool: extract_strings with {'filepath': 'test_cases/evidence/case001/suspicious_script.ps1'}
+2026-06-04 08:52:49.072 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] extract_strings | Success: True
+2026-06-04 08:52:49.072 | INFO     | agent.agent:_call_tool:36 - [AGENT] Calling tool: search_iocs with {'filepath': 'test_cases/evidence/case001/suspicious_script.ps1'}
+2026-06-04 08:52:49.072 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] search_iocs | Success: True
+2026-06-04 08:52:49.072 | INFO     | agent.agent:_call_tool:36 - [AGENT] Calling tool: get_file_hash with {'filepath': 'test_cases/evidence/case001/readme.txt'}
+2026-06-04 08:52:49.072 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] get_file_hash | Success: True
+2026-06-04 08:52:49.072 | INFO     | agent.agent:_call_tool:36 - [AGENT] Calling tool: analyze_file_metadata with {'filepath': 'test_cases/evidence/case001/readme.txt'}
+2026-06-04 08:52:49.073 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] analyze_file_metadata | Success: True
+2026-06-04 08:52:49.073 | INFO     | agent.agent:_call_tool:36 - [AGENT] Calling tool: extract_strings with {'filepath': 'test_cases/evidence/case001/readme.txt'}
+2026-06-04 08:52:49.073 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] extract_strings | Success: True
+2026-06-04 08:52:49.073 | INFO     | agent.agent:_call_tool:36 - [AGENT] Calling tool: search_iocs with {'filepath': 'test_cases/evidence/case001/readme.txt'}
+2026-06-04 08:52:49.073 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] search_iocs | Success: True
+2026-06-04 08:52:49.073 | INFO     | agent.agent:_call_tool:36 - [AGENT] Calling tool: check_persistence_mechanisms with {'dirpath': 'test_cases/evidence/case001'}
+2026-06-04 08:52:49.073 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] check_persistence_mechanisms | Success: True
+2026-06-04 08:52:49.073 | INFO     | agent.agent:_deep_analysis:124 - [AGENT] Deep analysis complete
+2026-06-04 08:52:49.073 | INFO     | agent.agent:run:228 - [AGENT] Iteration 3: Self-Correction
+2026-06-04 08:52:49.073 | INFO     | agent.agent:_self_correct:132 - [AGENT] Running self-correction...
+2026-06-04 08:52:55.299 | INFO     | agent.agent:_self_correct:165 - [AGENT] Self-correction complete
+2026-06-04 08:52:55.299 | INFO     | agent.agent:run:232 - [AGENT] Iteration 4: Report Generation
+2026-06-04 08:52:55.299 | INFO     | agent.agent:_generate_report:170 - [AGENT] Generating final report...
+2026-06-04 08:52:59.595 | INFO     | agent.agent:_generate_report:206 - [AGENT] Report generation complete
+2026-06-04 08:52:59.596 | INFO     | mcp_server.server:save_execution_log:373 - Execution log saved: logs/execution_20260604_085244.json
+2026-06-04 08:52:59.597 | INFO     | agent.agent:run:254 - [AGENT] Analysis complete | Duration: 15.38s
+2026-06-04 08:52:59.599 | INFO     | evaluator.evaluator:__init__:21 - Evaluator initialized | Ground truth: test_cases/ground_truth.json
+2026-06-04 08:52:59.599 | INFO     | evaluator.evaluator:evaluate:37 - [EVALUATOR] Starting evaluation...
+2026-06-04 08:52:59.599 | INFO     | evaluator.evaluator:evaluate:84 - [EVALUATOR] Accuracy: 85.7% | Hallucination rate: 0.0%
+2026-06-04 08:52:59.600 | INFO     | reporter.reporter:__init__:18 - Reporter initialized
+2026-06-04 08:52:59.601 | INFO     | reporter.reporter:generate_full_report:93 - Report saved: reports/report_20260604_085244.txt
+2026-06-04 08:53:04.646 | INFO     | mcp_server.server:__init__:30 - MCP Server initialized | Session: 20260604_085304
+2026-06-04 08:53:04.646 | INFO     | mcp_server.server:__init__:31 - Evidence path: test_cases/evidence/case001
+2026-06-04 08:53:04.647 | INFO     | agent.agent:__init__:32 - IR Agent initialized | Evidence: test_cases/evidence/case001
+2026-06-04 08:53:04.647 | INFO     | agent.agent:run:215 - [AGENT] Starting analysis | Max iterations: 5
+2026-06-04 08:53:04.647 | INFO     | agent.agent:run:220 - [AGENT] Iteration 1: Initial Triage
+2026-06-04 08:53:04.647 | INFO     | agent.agent:_initial_triage:66 - [AGENT] Starting initial triage...
+2026-06-04 08:53:04.647 | INFO     | agent.agent:_call_tool:36 - [AGENT] Calling tool: list_directory with {'dirpath': 'test_cases/evidence/case001'}
+2026-06-04 08:53:04.647 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] list_directory | Success: True
+2026-06-04 08:53:04.647 | INFO     | agent.agent:_call_tool:36 - [AGENT] Calling tool: generate_timeline with {'dirpath': 'test_cases/evidence/case001'}
+2026-06-04 08:53:04.647 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] generate_timeline | Success: True
+2026-06-04 08:53:09.345 | INFO     | agent.agent:_initial_triage:90 - [AGENT] Initial triage complete
+2026-06-04 08:53:09.346 | INFO     | agent.agent:run:224 - [AGENT] Iteration 2: Deep Analysis
+2026-06-04 08:53:09.346 | INFO     | agent.agent:_deep_analysis:99 - [AGENT] Starting deep analysis...
+2026-06-04 08:53:09.346 | INFO     | agent.agent:_call_tool:36 - [AGENT] Calling tool: get_file_hash with {'filepath': 'test_cases/evidence/case001/system_info.txt'}
+2026-06-04 08:53:09.346 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] get_file_hash | Success: True
+2026-06-04 08:53:09.346 | INFO     | agent.agent:_call_tool:36 - [AGENT] Calling tool: analyze_file_metadata with {'filepath': 'test_cases/evidence/case001/system_info.txt'}
+2026-06-04 08:53:09.346 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] analyze_file_metadata | Success: True
+2026-06-04 08:53:09.346 | INFO     | agent.agent:_call_tool:36 - [AGENT] Calling tool: extract_strings with {'filepath': 'test_cases/evidence/case001/system_info.txt'}
+2026-06-04 08:53:09.347 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] extract_strings | Success: True
+2026-06-04 08:53:09.347 | INFO     | agent.agent:_call_tool:36 - [AGENT] Calling tool: search_iocs with {'filepath': 'test_cases/evidence/case001/system_info.txt'}
+2026-06-04 08:53:09.347 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] search_iocs | Success: True
+2026-06-04 08:53:09.347 | INFO     | agent.agent:_call_tool:36 - [AGENT] Calling tool: get_file_hash with {'filepath': 'test_cases/evidence/case001/autorun.bat'}
+2026-06-04 08:53:09.347 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] get_file_hash | Success: True
+2026-06-04 08:53:09.347 | INFO     | agent.agent:_call_tool:36 - [AGENT] Calling tool: analyze_file_metadata with {'filepath': 'test_cases/evidence/case001/autorun.bat'}
+2026-06-04 08:53:09.347 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] analyze_file_metadata | Success: True
+2026-06-04 08:53:09.347 | INFO     | agent.agent:_call_tool:36 - [AGENT] Calling tool: extract_strings with {'filepath': 'test_cases/evidence/case001/autorun.bat'}
+2026-06-04 08:53:09.348 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] extract_strings | Success: True
+2026-06-04 08:53:09.348 | INFO     | agent.agent:_call_tool:36 - [AGENT] Calling tool: search_iocs with {'filepath': 'test_cases/evidence/case001/autorun.bat'}
+2026-06-04 08:53:09.348 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] search_iocs | Success: True
+2026-06-04 08:53:09.348 | INFO     | agent.agent:_call_tool:36 - [AGENT] Calling tool: get_file_hash with {'filepath': 'test_cases/evidence/case001/suspicious_script.ps1'}
+2026-06-04 08:53:09.348 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] get_file_hash | Success: True
+2026-06-04 08:53:09.348 | INFO     | agent.agent:_call_tool:36 - [AGENT] Calling tool: analyze_file_metadata with {'filepath': 'test_cases/evidence/case001/suspicious_script.ps1'}
+2026-06-04 08:53:09.348 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] analyze_file_metadata | Success: True
+2026-06-04 08:53:09.348 | INFO     | agent.agent:_call_tool:36 - [AGENT] Calling tool: extract_strings with {'filepath': 'test_cases/evidence/case001/suspicious_script.ps1'}
+2026-06-04 08:53:09.348 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] extract_strings | Success: True
+2026-06-04 08:53:09.348 | INFO     | agent.agent:_call_tool:36 - [AGENT] Calling tool: search_iocs with {'filepath': 'test_cases/evidence/case001/suspicious_script.ps1'}
+2026-06-04 08:53:09.348 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] search_iocs | Success: True
+2026-06-04 08:53:09.348 | INFO     | agent.agent:_call_tool:36 - [AGENT] Calling tool: get_file_hash with {'filepath': 'test_cases/evidence/case001/readme.txt'}
+2026-06-04 08:53:09.349 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] get_file_hash | Success: True
+2026-06-04 08:53:09.349 | INFO     | agent.agent:_call_tool:36 - [AGENT] Calling tool: analyze_file_metadata with {'filepath': 'test_cases/evidence/case001/readme.txt'}
+2026-06-04 08:53:09.349 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] analyze_file_metadata | Success: True
+2026-06-04 08:53:09.349 | INFO     | agent.agent:_call_tool:36 - [AGENT] Calling tool: extract_strings with {'filepath': 'test_cases/evidence/case001/readme.txt'}
+2026-06-04 08:53:09.349 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] extract_strings | Success: True
+2026-06-04 08:53:09.349 | INFO     | agent.agent:_call_tool:36 - [AGENT] Calling tool: search_iocs with {'filepath': 'test_cases/evidence/case001/readme.txt'}
+2026-06-04 08:53:09.349 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] search_iocs | Success: True
+2026-06-04 08:53:09.349 | INFO     | agent.agent:_call_tool:36 - [AGENT] Calling tool: check_persistence_mechanisms with {'dirpath': 'test_cases/evidence/case001'}
+2026-06-04 08:53:09.349 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] check_persistence_mechanisms | Success: True
+2026-06-04 08:53:09.349 | INFO     | agent.agent:_deep_analysis:124 - [AGENT] Deep analysis complete
+2026-06-04 08:53:09.350 | INFO     | agent.agent:run:228 - [AGENT] Iteration 3: Self-Correction
+2026-06-04 08:53:09.350 | INFO     | agent.agent:_self_correct:132 - [AGENT] Running self-correction...
+2026-06-04 08:53:14.081 | INFO     | agent.agent:_self_correct:165 - [AGENT] Self-correction complete
+2026-06-04 08:53:14.082 | INFO     | agent.agent:run:232 - [AGENT] Iteration 4: Report Generation
+2026-06-04 08:53:14.082 | INFO     | agent.agent:_generate_report:170 - [AGENT] Generating final report...
+2026-06-04 08:53:18.339 | INFO     | agent.agent:_generate_report:206 - [AGENT] Report generation complete
+2026-06-04 08:53:18.341 | INFO     | mcp_server.server:save_execution_log:373 - Execution log saved: logs/execution_20260604_085304.json
+2026-06-04 08:53:18.342 | INFO     | agent.agent:run:254 - [AGENT] Analysis complete | Duration: 13.69s
+2026-06-04 08:53:18.346 | INFO     | evaluator.evaluator:__init__:21 - Evaluator initialized | Ground truth: test_cases/ground_truth.json
+2026-06-04 08:53:18.347 | INFO     | evaluator.evaluator:evaluate:37 - [EVALUATOR] Starting evaluation...
+2026-06-04 08:53:18.347 | INFO     | evaluator.evaluator:evaluate:84 - [EVALUATOR] Accuracy: 85.7% | Hallucination rate: 0.0%
+2026-06-04 08:53:18.349 | INFO     | reporter.reporter:__init__:18 - Reporter initialized
+2026-06-04 08:53:18.350 | INFO     | reporter.reporter:generate_full_report:93 - Report saved: reports/report_20260604_085304.txt
+2026-06-04 08:53:24.347 | INFO     | mcp_server.server:__init__:30 - MCP Server initialized | Session: 20260604_085324
+2026-06-04 08:53:24.347 | INFO     | mcp_server.server:__init__:31 - Evidence path: test_cases/evidence/case001
+2026-06-04 08:53:24.347 | INFO     | agent.agent:__init__:32 - IR Agent initialized | Evidence: test_cases/evidence/case001
+2026-06-04 08:53:24.347 | INFO     | agent.agent:run:215 - [AGENT] Starting analysis | Max iterations: 5
+2026-06-04 08:53:24.347 | INFO     | agent.agent:run:220 - [AGENT] Iteration 1: Initial Triage
+2026-06-04 08:53:24.347 | INFO     | agent.agent:_initial_triage:66 - [AGENT] Starting initial triage...
+2026-06-04 08:53:24.347 | INFO     | agent.agent:_call_tool:36 - [AGENT] Calling tool: list_directory with {'dirpath': 'test_cases/evidence/case001'}
+2026-06-04 08:53:24.348 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] list_directory | Success: True
+2026-06-04 08:53:24.348 | INFO     | agent.agent:_call_tool:36 - [AGENT] Calling tool: generate_timeline with {'dirpath': 'test_cases/evidence/case001'}
+2026-06-04 08:53:24.348 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] generate_timeline | Success: True
+2026-06-04 08:53:29.414 | INFO     | agent.agent:_initial_triage:90 - [AGENT] Initial triage complete
+2026-06-04 08:53:29.414 | INFO     | agent.agent:run:224 - [AGENT] Iteration 2: Deep Analysis
+2026-06-04 08:53:29.414 | INFO     | agent.agent:_deep_analysis:99 - [AGENT] Starting deep analysis...
+2026-06-04 08:53:29.414 | INFO     | agent.agent:_call_tool:36 - [AGENT] Calling tool: get_file_hash with {'filepath': 'test_cases/evidence/case001/system_info.txt'}
+2026-06-04 08:53:29.414 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] get_file_hash | Success: True
+2026-06-04 08:53:29.414 | INFO     | agent.agent:_call_tool:36 - [AGENT] Calling tool: analyze_file_metadata with {'filepath': 'test_cases/evidence/case001/system_info.txt'}
+2026-06-04 08:53:29.415 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] analyze_file_metadata | Success: True
+2026-06-04 08:53:29.415 | INFO     | agent.agent:_call_tool:36 - [AGENT] Calling tool: extract_strings with {'filepath': 'test_cases/evidence/case001/system_info.txt'}
+2026-06-04 08:53:29.415 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] extract_strings | Success: True
+2026-06-04 08:53:29.415 | INFO     | agent.agent:_call_tool:36 - [AGENT] Calling tool: search_iocs with {'filepath': 'test_cases/evidence/case001/system_info.txt'}
+2026-06-04 08:53:29.415 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] search_iocs | Success: True
+2026-06-04 08:53:29.416 | INFO     | agent.agent:_call_tool:36 - [AGENT] Calling tool: get_file_hash with {'filepath': 'test_cases/evidence/case001/autorun.bat'}
+2026-06-04 08:53:29.416 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] get_file_hash | Success: True
+2026-06-04 08:53:29.416 | INFO     | agent.agent:_call_tool:36 - [AGENT] Calling tool: analyze_file_metadata with {'filepath': 'test_cases/evidence/case001/autorun.bat'}
+2026-06-04 08:53:29.416 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] analyze_file_metadata | Success: True
+2026-06-04 08:53:29.416 | INFO     | agent.agent:_call_tool:36 - [AGENT] Calling tool: extract_strings with {'filepath': 'test_cases/evidence/case001/autorun.bat'}
+2026-06-04 08:53:29.416 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] extract_strings | Success: True
+2026-06-04 08:53:29.416 | INFO     | agent.agent:_call_tool:36 - [AGENT] Calling tool: search_iocs with {'filepath': 'test_cases/evidence/case001/autorun.bat'}
+2026-06-04 08:53:29.416 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] search_iocs | Success: True
+2026-06-04 08:53:29.416 | INFO     | agent.agent:_call_tool:36 - [AGENT] Calling tool: get_file_hash with {'filepath': 'test_cases/evidence/case001/suspicious_script.ps1'}
+2026-06-04 08:53:29.416 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] get_file_hash | Success: True
+2026-06-04 08:53:29.416 | INFO     | agent.agent:_call_tool:36 - [AGENT] Calling tool: analyze_file_metadata with {'filepath': 'test_cases/evidence/case001/suspicious_script.ps1'}
+2026-06-04 08:53:29.416 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] analyze_file_metadata | Success: True
+2026-06-04 08:53:29.416 | INFO     | agent.agent:_call_tool:36 - [AGENT] Calling tool: extract_strings with {'filepath': 'test_cases/evidence/case001/suspicious_script.ps1'}
+2026-06-04 08:53:29.417 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] extract_strings | Success: True
+2026-06-04 08:53:29.417 | INFO     | agent.agent:_call_tool:36 - [AGENT] Calling tool: search_iocs with {'filepath': 'test_cases/evidence/case001/suspicious_script.ps1'}
+2026-06-04 08:53:29.417 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] search_iocs | Success: True
+2026-06-04 08:53:29.417 | INFO     | agent.agent:_call_tool:36 - [AGENT] Calling tool: get_file_hash with {'filepath': 'test_cases/evidence/case001/readme.txt'}
+2026-06-04 08:53:29.417 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] get_file_hash | Success: True
+2026-06-04 08:53:29.417 | INFO     | agent.agent:_call_tool:36 - [AGENT] Calling tool: analyze_file_metadata with {'filepath': 'test_cases/evidence/case001/readme.txt'}
+2026-06-04 08:53:29.417 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] analyze_file_metadata | Success: True
+2026-06-04 08:53:29.417 | INFO     | agent.agent:_call_tool:36 - [AGENT] Calling tool: extract_strings with {'filepath': 'test_cases/evidence/case001/readme.txt'}
+2026-06-04 08:53:29.417 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] extract_strings | Success: True
+2026-06-04 08:53:29.417 | INFO     | agent.agent:_call_tool:36 - [AGENT] Calling tool: search_iocs with {'filepath': 'test_cases/evidence/case001/readme.txt'}
+2026-06-04 08:53:29.417 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] search_iocs | Success: True
+2026-06-04 08:53:29.417 | INFO     | agent.agent:_call_tool:36 - [AGENT] Calling tool: check_persistence_mechanisms with {'dirpath': 'test_cases/evidence/case001'}
+2026-06-04 08:53:29.418 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] check_persistence_mechanisms | Success: True
+2026-06-04 08:53:29.418 | INFO     | agent.agent:_deep_analysis:124 - [AGENT] Deep analysis complete
+2026-06-04 08:53:29.418 | INFO     | agent.agent:run:228 - [AGENT] Iteration 3: Self-Correction
+2026-06-04 08:53:29.418 | INFO     | agent.agent:_self_correct:132 - [AGENT] Running self-correction...
+2026-06-04 08:53:34.415 | INFO     | agent.agent:_self_correct:165 - [AGENT] Self-correction complete
+2026-06-04 08:53:34.415 | INFO     | agent.agent:run:232 - [AGENT] Iteration 4: Report Generation
+2026-06-04 08:53:34.415 | INFO     | agent.agent:_generate_report:170 - [AGENT] Generating final report...
+2026-06-04 08:53:38.716 | INFO     | agent.agent:_generate_report:206 - [AGENT] Report generation complete
+2026-06-04 08:53:38.717 | INFO     | mcp_server.server:save_execution_log:373 - Execution log saved: logs/execution_20260604_085324.json
+2026-06-04 08:53:38.719 | INFO     | agent.agent:run:254 - [AGENT] Analysis complete | Duration: 14.37s
+2026-06-04 08:53:38.723 | INFO     | evaluator.evaluator:__init__:21 - Evaluator initialized | Ground truth: test_cases/ground_truth.json
+2026-06-04 08:53:38.723 | INFO     | evaluator.evaluator:evaluate:37 - [EVALUATOR] Starting evaluation...
+2026-06-04 08:53:38.723 | INFO     | evaluator.evaluator:evaluate:84 - [EVALUATOR] Accuracy: 57.1% | Hallucination rate: 0.0%
+2026-06-04 08:53:38.724 | INFO     | reporter.reporter:__init__:18 - Reporter initialized
+2026-06-04 08:53:38.725 | INFO     | reporter.reporter:generate_full_report:93 - Report saved: reports/report_20260604_085324.txt
+2026-06-04 08:53:46.314 | INFO     | mcp_server.server:__init__:30 - MCP Server initialized | Session: 20260604_085346
+2026-06-04 08:53:46.315 | INFO     | mcp_server.server:__init__:31 - Evidence path: test_cases/evidence/case001
+2026-06-04 08:53:46.315 | INFO     | agent.agent:__init__:32 - IR Agent initialized | Evidence: test_cases/evidence/case001
+2026-06-04 08:53:46.315 | INFO     | agent.agent:run:215 - [AGENT] Starting analysis | Max iterations: 5
+2026-06-04 08:53:46.315 | INFO     | agent.agent:run:220 - [AGENT] Iteration 1: Initial Triage
+2026-06-04 08:53:46.315 | INFO     | agent.agent:_initial_triage:66 - [AGENT] Starting initial triage...
+2026-06-04 08:53:46.315 | INFO     | agent.agent:_call_tool:36 - [AGENT] Calling tool: list_directory with {'dirpath': 'test_cases/evidence/case001'}
+2026-06-04 08:53:46.315 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] list_directory | Success: True
+2026-06-04 08:53:46.315 | INFO     | agent.agent:_call_tool:36 - [AGENT] Calling tool: generate_timeline with {'dirpath': 'test_cases/evidence/case001'}
+2026-06-04 08:53:46.315 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] generate_timeline | Success: True
+2026-06-04 08:53:51.023 | INFO     | agent.agent:_initial_triage:90 - [AGENT] Initial triage complete
+2026-06-04 08:53:51.023 | INFO     | agent.agent:run:224 - [AGENT] Iteration 2: Deep Analysis
+2026-06-04 08:53:51.023 | INFO     | agent.agent:_deep_analysis:99 - [AGENT] Starting deep analysis...
+2026-06-04 08:53:51.023 | INFO     | agent.agent:_call_tool:36 - [AGENT] Calling tool: get_file_hash with {'filepath': 'test_cases/evidence/case001/system_info.txt'}
+2026-06-04 08:53:51.024 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] get_file_hash | Success: True
+2026-06-04 08:53:51.024 | INFO     | agent.agent:_call_tool:36 - [AGENT] Calling tool: analyze_file_metadata with {'filepath': 'test_cases/evidence/case001/system_info.txt'}
+2026-06-04 08:53:51.024 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] analyze_file_metadata | Success: True
+2026-06-04 08:53:51.024 | INFO     | agent.agent:_call_tool:36 - [AGENT] Calling tool: extract_strings with {'filepath': 'test_cases/evidence/case001/system_info.txt'}
+2026-06-04 08:53:51.024 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] extract_strings | Success: True
+2026-06-04 08:53:51.024 | INFO     | agent.agent:_call_tool:36 - [AGENT] Calling tool: search_iocs with {'filepath': 'test_cases/evidence/case001/system_info.txt'}
+2026-06-04 08:53:51.025 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] search_iocs | Success: True
+2026-06-04 08:53:51.025 | INFO     | agent.agent:_call_tool:36 - [AGENT] Calling tool: get_file_hash with {'filepath': 'test_cases/evidence/case001/autorun.bat'}
+2026-06-04 08:53:51.025 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] get_file_hash | Success: True
+2026-06-04 08:53:51.025 | INFO     | agent.agent:_call_tool:36 - [AGENT] Calling tool: analyze_file_metadata with {'filepath': 'test_cases/evidence/case001/autorun.bat'}
+2026-06-04 08:53:51.025 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] analyze_file_metadata | Success: True
+2026-06-04 08:53:51.025 | INFO     | agent.agent:_call_tool:36 - [AGENT] Calling tool: extract_strings with {'filepath': 'test_cases/evidence/case001/autorun.bat'}
+2026-06-04 08:53:51.026 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] extract_strings | Success: True
+2026-06-04 08:53:51.026 | INFO     | agent.agent:_call_tool:36 - [AGENT] Calling tool: search_iocs with {'filepath': 'test_cases/evidence/case001/autorun.bat'}
+2026-06-04 08:53:51.026 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] search_iocs | Success: True
+2026-06-04 08:53:51.026 | INFO     | agent.agent:_call_tool:36 - [AGENT] Calling tool: get_file_hash with {'filepath': 'test_cases/evidence/case001/suspicious_script.ps1'}
+2026-06-04 08:53:51.026 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] get_file_hash | Success: True
+2026-06-04 08:53:51.026 | INFO     | agent.agent:_call_tool:36 - [AGENT] Calling tool: analyze_file_metadata with {'filepath': 'test_cases/evidence/case001/suspicious_script.ps1'}
+2026-06-04 08:53:51.026 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] analyze_file_metadata | Success: True
+2026-06-04 08:53:51.026 | INFO     | agent.agent:_call_tool:36 - [AGENT] Calling tool: extract_strings with {'filepath': 'test_cases/evidence/case001/suspicious_script.ps1'}
+2026-06-04 08:53:51.026 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] extract_strings | Success: True
+2026-06-04 08:53:51.026 | INFO     | agent.agent:_call_tool:36 - [AGENT] Calling tool: search_iocs with {'filepath': 'test_cases/evidence/case001/suspicious_script.ps1'}
+2026-06-04 08:53:51.027 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] search_iocs | Success: True
+2026-06-04 08:53:51.027 | INFO     | agent.agent:_call_tool:36 - [AGENT] Calling tool: get_file_hash with {'filepath': 'test_cases/evidence/case001/readme.txt'}
+2026-06-04 08:53:51.027 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] get_file_hash | Success: True
+2026-06-04 08:53:51.027 | INFO     | agent.agent:_call_tool:36 - [AGENT] Calling tool: analyze_file_metadata with {'filepath': 'test_cases/evidence/case001/readme.txt'}
+2026-06-04 08:53:51.027 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] analyze_file_metadata | Success: True
+2026-06-04 08:53:51.027 | INFO     | agent.agent:_call_tool:36 - [AGENT] Calling tool: extract_strings with {'filepath': 'test_cases/evidence/case001/readme.txt'}
+2026-06-04 08:53:51.027 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] extract_strings | Success: True
+2026-06-04 08:53:51.027 | INFO     | agent.agent:_call_tool:36 - [AGENT] Calling tool: search_iocs with {'filepath': 'test_cases/evidence/case001/readme.txt'}
+2026-06-04 08:53:51.027 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] search_iocs | Success: True
+2026-06-04 08:53:51.027 | INFO     | agent.agent:_call_tool:36 - [AGENT] Calling tool: check_persistence_mechanisms with {'dirpath': 'test_cases/evidence/case001'}
+2026-06-04 08:53:51.028 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] check_persistence_mechanisms | Success: True
+2026-06-04 08:53:51.028 | INFO     | agent.agent:_deep_analysis:124 - [AGENT] Deep analysis complete
+2026-06-04 08:53:51.028 | INFO     | agent.agent:run:228 - [AGENT] Iteration 3: Self-Correction
+2026-06-04 08:53:51.028 | INFO     | agent.agent:_self_correct:132 - [AGENT] Running self-correction...
+2026-06-04 08:53:55.817 | INFO     | agent.agent:_self_correct:165 - [AGENT] Self-correction complete
+2026-06-04 08:53:55.817 | INFO     | agent.agent:run:232 - [AGENT] Iteration 4: Report Generation
+2026-06-04 08:53:55.817 | INFO     | agent.agent:_generate_report:170 - [AGENT] Generating final report...
+2026-06-04 08:53:59.830 | INFO     | agent.agent:_generate_report:206 - [AGENT] Report generation complete
+2026-06-04 08:53:59.833 | INFO     | mcp_server.server:save_execution_log:373 - Execution log saved: logs/execution_20260604_085346.json
+2026-06-04 08:53:59.834 | INFO     | agent.agent:run:254 - [AGENT] Analysis complete | Duration: 13.52s
+2026-06-04 08:53:59.838 | INFO     | evaluator.evaluator:__init__:21 - Evaluator initialized | Ground truth: test_cases/ground_truth.json
+2026-06-04 08:53:59.838 | INFO     | evaluator.evaluator:evaluate:37 - [EVALUATOR] Starting evaluation...
+2026-06-04 08:53:59.839 | INFO     | evaluator.evaluator:evaluate:84 - [EVALUATOR] Accuracy: 85.7% | Hallucination rate: 0.0%
+2026-06-04 08:53:59.840 | INFO     | reporter.reporter:__init__:18 - Reporter initialized
+2026-06-04 08:53:59.841 | INFO     | reporter.reporter:generate_full_report:93 - Report saved: reports/report_20260604_085346.txt
+2026-06-04 08:58:55.920 | INFO     | mcp_server.server:__init__:30 - MCP Server initialized | Session: 20260604_085855
+2026-06-04 08:58:55.920 | INFO     | mcp_server.server:__init__:31 - Evidence path: test_cases/evidence/case001
+2026-06-04 08:58:55.920 | INFO     | agent.agent:__init__:32 - IR Agent initialized | Evidence: test_cases/evidence/case001
+2026-06-04 08:58:55.920 | INFO     | agent.agent:run:238 - [AGENT] Starting analysis | Max iterations: 5
+2026-06-04 08:58:55.920 | INFO     | agent.agent:run:243 - [AGENT] Iteration 1: Initial Triage
+2026-06-04 08:58:55.920 | INFO     | agent.agent:_initial_triage:66 - [AGENT] Starting initial triage...
+2026-06-04 08:58:55.920 | INFO     | agent.agent:_call_tool:36 - [AGENT] Calling tool: list_directory with {'dirpath': 'test_cases/evidence/case001'}
+2026-06-04 08:58:55.920 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] list_directory | Success: True
+2026-06-04 08:58:55.920 | INFO     | agent.agent:_call_tool:36 - [AGENT] Calling tool: generate_timeline with {'dirpath': 'test_cases/evidence/case001'}
+2026-06-04 08:58:55.920 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] generate_timeline | Success: True
+2026-06-04 08:59:01.704 | INFO     | agent.agent:_initial_triage:96 - [AGENT] Initial triage complete
+2026-06-04 08:59:01.704 | INFO     | agent.agent:run:247 - [AGENT] Iteration 2: Deep Analysis
+2026-06-04 08:59:01.704 | INFO     | agent.agent:_deep_analysis:105 - [AGENT] Starting deep analysis...
+2026-06-04 08:59:01.704 | INFO     | agent.agent:_call_tool:36 - [AGENT] Calling tool: get_file_hash with {'filepath': 'test_cases/evidence/case001/system_info.txt'}
+2026-06-04 08:59:01.705 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] get_file_hash | Success: True
+2026-06-04 08:59:01.705 | INFO     | agent.agent:_call_tool:36 - [AGENT] Calling tool: analyze_file_metadata with {'filepath': 'test_cases/evidence/case001/system_info.txt'}
+2026-06-04 08:59:01.705 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] analyze_file_metadata | Success: True
+2026-06-04 08:59:01.705 | INFO     | agent.agent:_call_tool:36 - [AGENT] Calling tool: extract_strings with {'filepath': 'test_cases/evidence/case001/system_info.txt'}
+2026-06-04 08:59:01.705 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] extract_strings | Success: True
+2026-06-04 08:59:01.705 | INFO     | agent.agent:_call_tool:36 - [AGENT] Calling tool: search_iocs with {'filepath': 'test_cases/evidence/case001/system_info.txt'}
+2026-06-04 08:59:01.706 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] search_iocs | Success: True
+2026-06-04 08:59:01.706 | INFO     | agent.agent:_call_tool:36 - [AGENT] Calling tool: get_file_hash with {'filepath': 'test_cases/evidence/case001/autorun.bat'}
+2026-06-04 08:59:01.706 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] get_file_hash | Success: True
+2026-06-04 08:59:01.706 | INFO     | agent.agent:_call_tool:36 - [AGENT] Calling tool: analyze_file_metadata with {'filepath': 'test_cases/evidence/case001/autorun.bat'}
+2026-06-04 08:59:01.706 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] analyze_file_metadata | Success: True
+2026-06-04 08:59:01.706 | INFO     | agent.agent:_call_tool:36 - [AGENT] Calling tool: extract_strings with {'filepath': 'test_cases/evidence/case001/autorun.bat'}
+2026-06-04 08:59:01.706 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] extract_strings | Success: True
+2026-06-04 08:59:01.706 | INFO     | agent.agent:_call_tool:36 - [AGENT] Calling tool: search_iocs with {'filepath': 'test_cases/evidence/case001/autorun.bat'}
+2026-06-04 08:59:01.706 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] search_iocs | Success: True
+2026-06-04 08:59:01.706 | INFO     | agent.agent:_call_tool:36 - [AGENT] Calling tool: get_file_hash with {'filepath': 'test_cases/evidence/case001/suspicious_script.ps1'}
+2026-06-04 08:59:01.707 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] get_file_hash | Success: True
+2026-06-04 08:59:01.707 | INFO     | agent.agent:_call_tool:36 - [AGENT] Calling tool: analyze_file_metadata with {'filepath': 'test_cases/evidence/case001/suspicious_script.ps1'}
+2026-06-04 08:59:01.707 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] analyze_file_metadata | Success: True
+2026-06-04 08:59:01.707 | INFO     | agent.agent:_call_tool:36 - [AGENT] Calling tool: extract_strings with {'filepath': 'test_cases/evidence/case001/suspicious_script.ps1'}
+2026-06-04 08:59:01.707 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] extract_strings | Success: True
+2026-06-04 08:59:01.707 | INFO     | agent.agent:_call_tool:36 - [AGENT] Calling tool: search_iocs with {'filepath': 'test_cases/evidence/case001/suspicious_script.ps1'}
+2026-06-04 08:59:01.707 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] search_iocs | Success: True
+2026-06-04 08:59:01.707 | INFO     | agent.agent:_call_tool:36 - [AGENT] Calling tool: get_file_hash with {'filepath': 'test_cases/evidence/case001/readme.txt'}
+2026-06-04 08:59:01.707 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] get_file_hash | Success: True
+2026-06-04 08:59:01.707 | INFO     | agent.agent:_call_tool:36 - [AGENT] Calling tool: analyze_file_metadata with {'filepath': 'test_cases/evidence/case001/readme.txt'}
+2026-06-04 08:59:01.707 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] analyze_file_metadata | Success: True
+2026-06-04 08:59:01.707 | INFO     | agent.agent:_call_tool:36 - [AGENT] Calling tool: extract_strings with {'filepath': 'test_cases/evidence/case001/readme.txt'}
+2026-06-04 08:59:01.707 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] extract_strings | Success: True
+2026-06-04 08:59:01.707 | INFO     | agent.agent:_call_tool:36 - [AGENT] Calling tool: search_iocs with {'filepath': 'test_cases/evidence/case001/readme.txt'}
+2026-06-04 08:59:01.708 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] search_iocs | Success: True
+2026-06-04 08:59:01.708 | INFO     | agent.agent:_call_tool:36 - [AGENT] Calling tool: check_persistence_mechanisms with {'dirpath': 'test_cases/evidence/case001'}
+2026-06-04 08:59:01.708 | INFO     | mcp_server.server:_log_execution:44 - [TOOL EXECUTED] check_persistence_mechanisms | Success: True
+2026-06-04 08:59:01.708 | INFO     | agent.agent:_deep_analysis:130 - [AGENT] Deep analysis complete
+2026-06-04 08:59:01.708 | INFO     | agent.agent:run:251 - [AGENT] Iteration 3: Self-Correction
+2026-06-04 08:59:01.708 | INFO     | agent.agent:_self_correct:138 - [AGENT] Running self-correction...
+2026-06-04 08:59:06.838 | INFO     | agent.agent:_self_correct:178 - [AGENT] Self-correction complete
+2026-06-04 08:59:06.838 | INFO     | agent.agent:run:255 - [AGENT] Iteration 4: Report Generation
+2026-06-04 08:59:06.838 | INFO     | agent.agent:_generate_report:183 - [AGENT] Generating final report...
+2026-06-04 08:59:10.800 | INFO     | agent.agent:_generate_report:229 - [AGENT] Report generation complete
+2026-06-04 08:59:10.802 | INFO     | mcp_server.server:save_execution_log:373 - Execution log saved: logs/execution_20260604_085855.json
+2026-06-04 08:59:10.803 | INFO     | agent.agent:run:277 - [AGENT] Analysis complete | Duration: 14.88s
+2026-06-04 08:59:10.807 | INFO     | evaluator.evaluator:__init__:21 - Evaluator initialized | Ground truth: test_cases/ground_truth.json
+2026-06-04 08:59:10.807 | INFO     | evaluator.evaluator:evaluate:37 - [EVALUATOR] Starting evaluation...
+2026-06-04 08:59:10.807 | INFO     | evaluator.evaluator:evaluate:84 - [EVALUATOR] Accuracy: 100.0% | Hallucination rate: 0.0%
+2026-06-04 08:59:10.809 | INFO     | reporter.reporter:__init__:18 - Reporter initialized
+2026-06-04 08:59:10.810 | INFO     | reporter.reporter:generate_full_report:93 - Report saved: reports/report_20260604_085855.txt

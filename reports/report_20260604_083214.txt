@@ -1,0 +1,79 @@
+
+╔══════════════════════════════════════════════════════════════╗
+║           SIFT-BENCH INCIDENT RESPONSE REPORT                ║
+║              Autonomous IR Analysis System                    ║
+╚══════════════════════════════════════════════════════════════╝
+
+Session ID:     20260604_083214
+Generated:      2026-06-04 08uman:32:15
+Duration:       1.37 seconds
+Iterations:     4
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+                    ACCURACY SCORECARD
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Overall Accuracy:       0.0%
+Hallucination Rate:     0.0%
+True Positives:         0
+False Negatives:        7
+Hallucinations:         0
+Performance Grade:      NEEDS_IMPROVEMENT
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+                    AGENT IR REPORT
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+ERROR: 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+                    CONFIRMED FINDINGS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  None
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+                    MISSED FINDINGS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  ✓ powershell — PowerShell execution detected
+  ✓ suspicious — Suspicious files or activity detected
+  ✓ download — File download activity detected
+  ✓ persistence — Persistence mechanism identified
+  ✓ malware — Malware indicators found
+  ✓ timeline — File timeline analyzed
+  ✓ hash — File hashes calculated for integrity
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+                    HALLUCINATIONS DETECTED
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  None
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+                    EXECUTION TRACE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  [2026-06-04T08:32:14.437933] Iter 1 | Tool: list_directory | Result: {'success': True, 'dirpath': 'test_cases/evidence/case001', 'total_entries': 4, 'entries': [{'name':
+  [2026-06-04T08:32:14.438269] Iter 1 | Tool: generate_timeline | Result: {'success': True, 'dirpath': 'test_cases/evidence/case001', 'total_events': 4, 'timeline': [{'timest
+  [2026-06-04T08:32:15.267681] Iter 2 | Tool: get_file_hash | Result: {'success': True, 'filepath': 'test_cases/evidence/case001/system_info.txt', 'md5': '94d2b5a4537e8d4
+  [2026-06-04T08:32:15.267997] Iter 2 | Tool: analyze_file_metadata | Result: {'success': True, 'filepath': 'test_cases/evidence/case001/system_info.txt', 'size_bytes': 305, 'cre
+  [2026-06-04T08:32:15.268500] Iter 2 | Tool: extract_strings | Result: {'success': True, 'filepath': 'test_cases/evidence/case001/system_info.txt', 'total_strings': 8, 'su
+  [2026-06-04T08:32:15.269644] Iter 2 | Tool: search_iocs | Result: {'success': True, 'filepath': 'test_cases/evidence/case001/system_info.txt', 'suspicious_ips': ['185
+  [2026-06-04T08:32:15.270315] Iter 2 | Tool: get_file_hash | Result: {'success': True, 'filepath': 'test_cases/evidence/case001/autorun.bat', 'md5': 'fb3176319d130342d54
+  [2026-06-04T08:32:15.270569] Iter 2 | Tool: analyze_file_metadata | Result: {'success': True, 'filepath': 'test_cases/evidence/case001/autorun.bat', 'size_bytes': 264, 'created
+  [2026-06-04T08:32:15.271114] Iter 2 | Tool: extract_strings | Result: {'success': True, 'filepath': 'test_cases/evidence/case001/autorun.bat', 'total_strings': 4, 'suspic
+  [2026-06-04T08:32:15.275274] Iter 2 | Tool: search_iocs | Result: {'success': True, 'filepath': 'test_cases/evidence/case001/autorun.bat', 'suspicious_ips': [], 'urls
+  [2026-06-04T08:32:15.276108] Iter 2 | Tool: get_file_hash | Result: {'success': True, 'filepath': 'test_cases/evidence/case001/suspicious_script.ps1', 'md5': 'b742bfa41
+  [2026-06-04T08:32:15.276337] Iter 2 | Tool: analyze_file_metadata | Result: {'success': True, 'filepath': 'test_cases/evidence/case001/suspicious_script.ps1', 'size_bytes': 336
+  [2026-06-04T08:32:15.276717] Iter 2 | Tool: extract_strings | Result: {'success': True, 'filepath': 'test_cases/evidence/case001/suspicious_script.ps1', 'total_strings': 
+  [2026-06-04T08:32:15.278008] Iter 2 | Tool: search_iocs | Result: {'success': True, 'filepath': 'test_cases/evidence/case001/suspicious_script.ps1', 'suspicious_ips':
+  [2026-06-04T08:32:15.278973] Iter 2 | Tool: get_file_hash | Result: {'success': True, 'filepath': 'test_cases/evidence/case001/readme.txt', 'md5': 'a94bd7da384bce364b65
+  [2026-06-04T08:32:15.279376] Iter 2 | Tool: analyze_file_metadata | Result: {'success': True, 'filepath': 'test_cases/evidence/case001/readme.txt', 'size_bytes': 129, 'created'
+  [2026-06-04T08:32:15.279761] Iter 2 | Tool: extract_strings | Result: {'success': True, 'filepath': 'test_cases/evidence/case001/readme.txt', 'total_strings': 3, 'suspici
+  [2026-06-04T08:32:15.280240] Iter 2 | Tool: search_iocs | Result: {'success': True, 'filepath': 'test_cases/evidence/case001/readme.txt', 'suspicious_ips': [], 'urls'
+  [2026-06-04T08:32:15.281949] Iter 2 | Tool: check_persistence_mechanisms | Result: {'success': True, 'dirpath': 'test_cases/evidence/case001', 'persistence_indicators_found': 1, 'indi
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+END OF REPORT
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━

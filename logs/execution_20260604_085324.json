@@ -1,0 +1,196 @@
+[
+  {
+    "timestamp": "2026-06-04T08:53:24.348090",
+    "session_id": "20260604_085324",
+    "tool": "list_directory",
+    "inputs": {
+      "dirpath": "test_cases/evidence/case001"
+    },
+    "output_summary": "{'success': True, 'dirpath': 'test_cases/evidence/case001', 'total_entries': 4, 'entries': [{'name': 'system_info.txt', 'type': 'file', 'size_bytes': 305, 'modified': '2026-06-03T23:09:46.167260'}, {'name': 'autorun.bat', 'type': 'file', 'size_bytes': 264, 'modified': '2026-06-03T23:09:39.899483'}, {'name': 'suspicious_script.ps1', 'type': 'file', 'size_bytes': 336, 'modified': '2026-06-03T23:09:31.406434'}, {'name': 'readme.txt', 'type': 'file', 'size_bytes': 129, 'modified': '2026-06-03T23:09:",
+    "success": true
+  },
+  {
+    "timestamp": "2026-06-04T08:53:24.348267",
+    "session_id": "20260604_085324",
+    "tool": "generate_timeline",
+    "inputs": {
+      "dirpath": "test_cases/evidence/case001"
+    },
+    "output_summary": "{'success': True, 'dirpath': 'test_cases/evidence/case001', 'total_events': 4, 'timeline': [{'timestamp': '2026-06-03T23:09:31.406434', 'filepath': 'test_cases/evidence/case001/suspicious_script.ps1', 'size_bytes': 336, 'action': 'modified'}, {'timestamp': '2026-06-03T23:09:39.899483', 'filepath': 'test_cases/evidence/case001/autorun.bat', 'size_bytes': 264, 'action': 'modified'}, {'timestamp': '2026-06-03T23:09:46.167260', 'filepath': 'test_cases/evidence/case001/system_info.txt', 'size_bytes':",
+    "success": true
+  },
+  {
+    "timestamp": "2026-06-04T08:53:29.414888",
+    "session_id": "20260604_085324",
+    "tool": "get_file_hash",
+    "inputs": {
+      "filepath": "test_cases/evidence/case001/system_info.txt"
+    },
+    "output_summary": "{'success': True, 'filepath': 'test_cases/evidence/case001/system_info.txt', 'md5': '94d2b5a4537e8d4cb87da282a2c4d781', 'sha256': 'd4b8c0f6c08e730e7e684ae2b6d042f2fabc504e492c44ed961ad6a999883c1c', 'size_bytes': 305, 'timestamp': '2026-06-04T08:53:29.414878'}",
+    "success": true
+  },
+  {
+    "timestamp": "2026-06-04T08:53:29.415060",
+    "session_id": "20260604_085324",
+    "tool": "analyze_file_metadata",
+    "inputs": {
+      "filepath": "test_cases/evidence/case001/system_info.txt"
+    },
+    "output_summary": "{'success': True, 'filepath': 'test_cases/evidence/case001/system_info.txt', 'size_bytes': 305, 'created': '2026-06-03T23:09:46.167260', 'modified': '2026-06-03T23:09:46.167260', 'accessed': '2026-06-03T23:09:47.516470', 'timestomp_suspected': False, 'time_diff_seconds': 0.0, 'extension': '.txt', 'is_hidden': False}",
+    "success": true
+  },
+  {
+    "timestamp": "2026-06-04T08:53:29.415319",
+    "session_id": "20260604_085324",
+    "tool": "extract_strings",
+    "inputs": {
+      "filepath": "test_cases/evidence/case001/system_info.txt",
+      "min_length": 4
+    },
+    "output_summary": "{'success': True, 'filepath': 'test_cases/evidence/case001/system_info.txt', 'total_strings': 8, 'suspicious_strings': ['PowerShell execution policy bypassed', 'Download attempted from: http://malicious-c2-server.com'], 'all_strings_sample': ['System Information - Collected 2024-03-15 02:34:11', 'Hostname: WORKSTATION-047', 'User: john.smith', 'Last Login: 2024-03-15 02:31:00', 'Suspicious process detected: svchost32.exe', 'Network connection to: 185.220.101.45:4444', 'PowerShell execution polic",
+    "success": true
+  },
+  {
+    "timestamp": "2026-06-04T08:53:29.415928",
+    "session_id": "20260604_085324",
+    "tool": "search_iocs",
+    "inputs": {
+      "filepath": "test_cases/evidence/case001/system_info.txt"
+    },
+    "output_summary": "{'success': True, 'filepath': 'test_cases/evidence/case001/system_info.txt', 'suspicious_ips': ['185.220.101.45'], 'urls': ['http://malicious-c2-server.com'], 'registry_keys': [], 'emails': [], 'total_iocs_found': 2}",
+    "success": true
+  },
+  {
+    "timestamp": "2026-06-04T08:53:29.416151",
+    "session_id": "20260604_085324",
+    "tool": "get_file_hash",
+    "inputs": {
+      "filepath": "test_cases/evidence/case001/autorun.bat"
+    },
+    "output_summary": "{'success': True, 'filepath': 'test_cases/evidence/case001/autorun.bat', 'md5': 'fb3176319d130342d540410c8771b4b7', 'sha256': 'eeb85ed10b690165e650fb29f3002c441b3e936d1d30ac134f36463b9ba4e756', 'size_bytes': 264, 'timestamp': '2026-06-04T08:53:29.416148'}",
+    "success": true
+  },
+  {
+    "timestamp": "2026-06-04T08:53:29.416278",
+    "session_id": "20260604_085324",
+    "tool": "analyze_file_metadata",
+    "inputs": {
+      "filepath": "test_cases/evidence/case001/autorun.bat"
+    },
+    "output_summary": "{'success': True, 'filepath': 'test_cases/evidence/case001/autorun.bat', 'size_bytes': 264, 'created': '2026-06-03T23:09:39.899483', 'modified': '2026-06-03T23:09:39.899483', 'accessed': '2026-06-03T23:09:41.058218', 'timestomp_suspected': False, 'time_diff_seconds': 0.0, 'extension': '.bat', 'is_hidden': False}",
+    "success": true
+  },
+  {
+    "timestamp": "2026-06-04T08:53:29.416457",
+    "session_id": "20260604_085324",
+    "tool": "extract_strings",
+    "inputs": {
+      "filepath": "test_cases/evidence/case001/autorun.bat",
+      "min_length": 4
+    },
+    "output_summary": "{'success': True, 'filepath': 'test_cases/evidence/case001/autorun.bat', 'total_strings': 4, 'suspicious_strings': ['copy C:\\\\Windows\\\\Temp\\\\svchost32.exe C:\\\\Users\\\\Public\\\\svchost32.exe', 'echo Download complete > C:\\\\Windows\\\\Temp\\\\log.txt'], 'all_strings_sample': ['@echo off', 'copy C:\\\\Windows\\\\Temp\\\\svchost32.exe C:\\\\Users\\\\Public\\\\svchost32.exe', 'reg add HKEY_LOCAL_MACHINE\\\\SOFTWARE\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\Run /v WindowsDefender /t REG_SZ /d \"C:\\\\Users\\\\Public\\\\svchost32.exe",
+    "success": true
+  },
+  {
+    "timestamp": "2026-06-04T08:53:29.416639",
+    "session_id": "20260604_085324",
+    "tool": "search_iocs",
+    "inputs": {
+      "filepath": "test_cases/evidence/case001/autorun.bat"
+    },
+    "output_summary": "{'success': True, 'filepath': 'test_cases/evidence/case001/autorun.bat', 'suspicious_ips': [], 'urls': [], 'registry_keys': ['HKEY_LOCAL_MACHINE\\\\SOFTWARE\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\Run'], 'emails': [], 'total_iocs_found': 1}",
+    "success": true
+  },
+  {
+    "timestamp": "2026-06-04T08:53:29.416818",
+    "session_id": "20260604_085324",
+    "tool": "get_file_hash",
+    "inputs": {
+      "filepath": "test_cases/evidence/case001/suspicious_script.ps1"
+    },
+    "output_summary": "{'success': True, 'filepath': 'test_cases/evidence/case001/suspicious_script.ps1', 'md5': 'b742bfa412af534b0f2e974fd9bb9e13', 'sha256': '7f8987628f4d42b69a1b9f7c05b657406d92283084621fdbcad7aaaabc0db14b', 'size_bytes': 336, 'timestamp': '2026-06-04T08:53:29.416815'}",
+    "success": true
+  },
+  {
+    "timestamp": "2026-06-04T08:53:29.416932",
+    "session_id": "20260604_085324",
+    "tool": "analyze_file_metadata",
+    "inputs": {
+      "filepath": "test_cases/evidence/case001/suspicious_script.ps1"
+    },
+    "output_summary": "{'success': True, 'filepath': 'test_cases/evidence/case001/suspicious_script.ps1', 'size_bytes': 336, 'created': '2026-06-03T23:09:31.406434', 'modified': '2026-06-03T23:09:31.406434', 'accessed': '2026-06-03T23:09:33.010890', 'timestomp_suspected': False, 'time_diff_seconds': 0.0, 'extension': '.ps1', 'is_hidden': False}",
+    "success": true
+  },
+  {
+    "timestamp": "2026-06-04T08:53:29.417113",
+    "session_id": "20260604_085324",
+    "tool": "extract_strings",
+    "inputs": {
+      "filepath": "test_cases/evidence/case001/suspicious_script.ps1",
+      "min_length": 4
+    },
+    "output_summary": "{'success': True, 'filepath': 'test_cases/evidence/case001/suspicious_script.ps1', 'total_strings': 6, 'suspicious_strings': ['# Suspicious PowerShell Script - Sample Evidence', '$url = \"http://malicious-c2-server.com/payload.exe\"', '$output = \"C:\\\\Windows\\\\Temp\\\\svchost32.exe\"', 'Set-ItemProperty -Path \"HKEY_CURRENT_USER\\\\Software\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\Run\" -Name \"WindowsUpdate\" -Value $output'], 'all_strings_sample': ['# Suspicious PowerShell Script - Sample Evidence', '$url = \"",
+    "success": true
+  },
+  {
+    "timestamp": "2026-06-04T08:53:29.417295",
+    "session_id": "20260604_085324",
+    "tool": "search_iocs",
+    "inputs": {
+      "filepath": "test_cases/evidence/case001/suspicious_script.ps1"
+    },
+    "output_summary": "{'success': True, 'filepath': 'test_cases/evidence/case001/suspicious_script.ps1', 'suspicious_ips': [], 'urls': ['http://malicious-c2-server.com/payload.exe'], 'registry_keys': ['HKEY_CURRENT_USER\\\\Software\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\Run\"'], 'emails': [], 'total_iocs_found': 2}",
+    "success": true
+  },
+  {
+    "timestamp": "2026-06-04T08:53:29.417460",
+    "session_id": "20260604_085324",
+    "tool": "get_file_hash",
+    "inputs": {
+      "filepath": "test_cases/evidence/case001/readme.txt"
+    },
+    "output_summary": "{'success': True, 'filepath': 'test_cases/evidence/case001/readme.txt', 'md5': 'a94bd7da384bce364b652edd18a5cf27', 'sha256': 'bf98d339b3e889ad278ea055b4835349a3724b11175d128ffaf167097dcbc9d6', 'size_bytes': 129, 'timestamp': '2026-06-04T08:53:29.417457'}",
+    "success": true
+  },
+  {
+    "timestamp": "2026-06-04T08:53:29.417566",
+    "session_id": "20260604_085324",
+    "tool": "analyze_file_metadata",
+    "inputs": {
+      "filepath": "test_cases/evidence/case001/readme.txt"
+    },
+    "output_summary": "{'success': True, 'filepath': 'test_cases/evidence/case001/readme.txt', 'size_bytes': 129, 'created': '2026-06-03T23:09:52.027208', 'modified': '2026-06-03T23:09:52.027208', 'accessed': '2026-06-03T23:09:54.247945', 'timestomp_suspected': False, 'time_diff_seconds': 0.0, 'extension': '.txt', 'is_hidden': False}",
+    "success": true
+  },
+  {
+    "timestamp": "2026-06-04T08:53:29.417723",
+    "session_id": "20260604_085324",
+    "tool": "extract_strings",
+    "inputs": {
+      "filepath": "test_cases/evidence/case001/readme.txt",
+      "min_length": 4
+    },
+    "output_summary": "{'success': True, 'filepath': 'test_cases/evidence/case001/readme.txt', 'total_strings': 3, 'suspicious_strings': ['Case: Malware infection via phishing email.'], 'all_strings_sample': ['This is sample evidence for SIFT-BENCH testing.', 'Case: Malware infection via phishing email.', 'Analyst: SIFT-BENCH Automated System']}",
+    "success": true
+  },
+  {
+    "timestamp": "2026-06-04T08:53:29.417871",
+    "session_id": "20260604_085324",
+    "tool": "search_iocs",
+    "inputs": {
+      "filepath": "test_cases/evidence/case001/readme.txt"
+    },
+    "output_summary": "{'success': True, 'filepath': 'test_cases/evidence/case001/readme.txt', 'suspicious_ips': [], 'urls': [], 'registry_keys': [], 'emails': [], 'total_iocs_found': 0}",
+    "success": true
+  },
+  {
+    "timestamp": "2026-06-04T08:53:29.418229",
+    "session_id": "20260604_085324",
+    "tool": "check_persistence_mechanisms",
+    "inputs": {
+      "dirpath": "test_cases/evidence/case001"
+    },
+    "output_summary": "{'success': True, 'dirpath': 'test_cases/evidence/case001', 'persistence_indicators_found': 1, 'indicators': [{'file': 'test_cases/evidence/case001/autorun.bat', 'indicator': 'autorun', 'size': 264, 'modified': '2026-06-03T23:09:39.899483'}]}",
+    "success": true
+  }
+]
