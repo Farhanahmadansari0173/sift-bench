@@ -1,0 +1,9 @@
+System state at ransomware execution
+Hostname: FILESERVER-01
+OS: Windows Server 2019
+Suspicious process: svchost32.exe PID 4892
+Shadow copies deleted: YES
+Backup files deleted: YES
+Firewall disabled: YES
+Antivirus disabled: YES
+Last backup: 2024-04-18 23:00:00

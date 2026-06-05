@@ -1,0 +1,7 @@
+Files encrypted by ransomware - 2024-04-20 03:15:22
+Total files encrypted: 1337
+Extensions affected: .docx .xlsx .pdf .jpg .png
+Ransom note dropped: README_DECRYPT.txt
+Bitcoin wallet: 1A2b3C4d5E6f7G8h9I0j
+Ransom amount: 0.5 BTC
+Deadline: 72 hours

@@ -68,7 +68,9 @@ ax.add_patch(guard)
 ax.text(7, 9.33, 'Architectural guardrail: no destructive commands exist in the MCP server API',
     ha='center', va='center', fontsize=14, color='#5DCAA5', zorder=4)
 
-arrow(ax, 7, 8.8, 7, 7.9)
+ax.annotate('', xy=(7, 5.8), xytext=(7, 8.9),
+    arrowprops=dict(arrowstyle='->', color='#534AB7', lw=1.5,
+    mutation_scale=15), zorder=5)
 
 box(ax, 0.5, 6.5, 6, 1.3, 'Ground Truth Evaluator',
     'Accuracy score  ·  hallucination rate  ·  grade',

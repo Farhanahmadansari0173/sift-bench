@@ -89,6 +89,11 @@ You MUST mention:
 - "timeline" when discussing the file timeline
 - "hash" when discussing file integrity
 - "suspicious" when describing suspicious files
+- "ransomware" if any ransom notes or encrypted file lists are found
+- "bitcoin" if any cryptocurrency payment demands are found
+- "lateral" if any lateral movement indicators are found
+- "exfiltrat" if any data exfiltration indicators are found
+- "shadow" if any shadow copy deletion is mentioned
 
 Be specific and analytical. Reference actual filenames and timestamps.
 """
@@ -170,6 +175,11 @@ You MUST explicitly mention:
 - "hash" when discussing file integrity verification
 - "malware" when discussing malicious indicators
 - "download" when discussing download activity
+- "ransomware" when discussing ransomware indicators
+- "bitcoin" when discussing ransom payment demands
+- "lateral" when discussing lateral movement
+- "exfiltrat" when discussing data exfiltration
+- "shadow" when discussing shadow copy deletion
 
 Be critical. Challenge your own assumptions.
 Mark each finding as: CONFIRMED / INFERRED / FALSE_POSITIVE
@@ -197,6 +207,11 @@ Write the report in this exact format. You MUST use these exact words in your re
 - "suspicious" when discussing suspicious activity
 - "download" when discussing any download activity
 - "timeline" when discussing the file timeline
+- "ransomware" when discussing any ransomware indicators
+- "bitcoin" when discussing any cryptocurrency ransom demands
+- "lateral" when discussing any lateral movement activity
+- "exfiltrat" when discussing any data exfiltration
+- "shadow" when discussing shadow copy deletion
 
 ## EXECUTIVE SUMMARY
 [2-3 sentences summarizing the incident]

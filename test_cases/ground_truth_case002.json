@@ -1,0 +1,53 @@
+{
+  "case_id": "CASE-002",
+  "case_name": "Ransomware Attack - File Server Encryption",
+  "description": "A Windows file server hit by ransomware via RDP brute force",
+  "expected_findings": [
+    {
+      "keyword": "ransomware",
+      "description": "Ransomware infection confirmed",
+      "severity": "CRITICAL"
+    },
+    {
+      "keyword": "encrypted",
+      "description": "Files encrypted by ransomware",
+      "severity": "CRITICAL"
+    },
+    {
+      "keyword": "bitcoin",
+      "description": "Bitcoin ransom demand found",
+      "severity": "HIGH"
+    },
+    {
+      "keyword": "lateral",
+      "description": "Lateral movement via SMB detected",
+      "severity": "HIGH"
+    },
+    {
+      "keyword": "exfiltrat",
+      "description": "Data exfiltration before encryption",
+      "severity": "CRITICAL"
+    },
+    {
+      "keyword": "shadow",
+      "description": "Shadow copies deleted to prevent recovery",
+      "severity": "CRITICAL"
+    },
+    {
+      "keyword": "persistence",
+      "description": "Persistence mechanism identified",
+      "severity": "HIGH"
+    }
+  ],
+  "forbidden_claims": [
+    {
+      "keyword": "files successfully recovered",
+      "description": "No recovery possible in this case"
+    },
+    {
+      "keyword": "antivirus detected",
+      "description": "Antivirus was disabled before attack"
+    }
+  ],
+  "ground_truth_summary": "Ransomware attack via RDP brute force. Data exfiltrated before encryption. Shadow copies deleted. 1337 files encrypted. Bitcoin ransom demanded."
+}

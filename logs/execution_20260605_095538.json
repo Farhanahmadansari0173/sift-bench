@@ -1,0 +1,196 @@
+[
+  {
+    "timestamp": "2026-06-05T09:55:38.455954",
+    "session_id": "20260605_095538",
+    "tool": "list_directory",
+    "inputs": {
+      "dirpath": "test_cases/evidence/case002"
+    },
+    "output_summary": "{'success': True, 'dirpath': 'test_cases/evidence/case002', 'total_entries': 4, 'entries': [{'name': 'ransom_note.txt', 'type': 'file', 'size_bytes': 161, 'modified': '2026-06-05T09:49:51.781390'}, {'name': 'network_traffic.txt', 'type': 'file', 'size_bytes': 285, 'modified': '2026-06-05T09:49:58.841422'}, {'name': 'encrypted_files.txt', 'type': 'file', 'size_bytes': 247, 'modified': '2026-06-05T09:49:44.303829'}, {'name': 'system_state.txt', 'type': 'file', 'size_bytes': 261, 'modified': '2026-",
+    "success": true
+  },
+  {
+    "timestamp": "2026-06-05T09:55:38.456307",
+    "session_id": "20260605_095538",
+    "tool": "generate_timeline",
+    "inputs": {
+      "dirpath": "test_cases/evidence/case002"
+    },
+    "output_summary": "{'success': True, 'dirpath': 'test_cases/evidence/case002', 'total_events': 4, 'timeline': [{'timestamp': '2026-06-05T09:49:44.303829', 'filepath': 'test_cases/evidence/case002/encrypted_files.txt', 'size_bytes': 247, 'action': 'modified'}, {'timestamp': '2026-06-05T09:49:51.781390', 'filepath': 'test_cases/evidence/case002/ransom_note.txt', 'size_bytes': 161, 'action': 'modified'}, {'timestamp': '2026-06-05T09:49:58.841422', 'filepath': 'test_cases/evidence/case002/network_traffic.txt', 'size_b",
+    "success": true
+  },
+  {
+    "timestamp": "2026-06-05T09:55:42.988398",
+    "session_id": "20260605_095538",
+    "tool": "get_file_hash",
+    "inputs": {
+      "filepath": "test_cases/evidence/case002/ransom_note.txt"
+    },
+    "output_summary": "{'success': True, 'filepath': 'test_cases/evidence/case002/ransom_note.txt', 'md5': 'cae81c925f1bd9d9cfb9e09688e8c49a', 'sha256': 'ad12361e0acca4d2c007aa0c4320b71acf522b47417154c259bff947a5d56b48', 'size_bytes': 161, 'timestamp': '2026-06-05T09:55:42.988378'}",
+    "success": true
+  },
+  {
+    "timestamp": "2026-06-05T09:55:42.988705",
+    "session_id": "20260605_095538",
+    "tool": "analyze_file_metadata",
+    "inputs": {
+      "filepath": "test_cases/evidence/case002/ransom_note.txt"
+    },
+    "output_summary": "{'success': True, 'filepath': 'test_cases/evidence/case002/ransom_note.txt', 'size_bytes': 161, 'created': '2026-06-05T09:49:51.781390', 'modified': '2026-06-05T09:49:51.781390', 'accessed': '2026-06-05T09:49:53.323802', 'timestomp_suspected': False, 'time_diff_seconds': 0.0, 'extension': '.txt', 'is_hidden': False}",
+    "success": true
+  },
+  {
+    "timestamp": "2026-06-05T09:55:42.989110",
+    "session_id": "20260605_095538",
+    "tool": "extract_strings",
+    "inputs": {
+      "filepath": "test_cases/evidence/case002/ransom_note.txt",
+      "min_length": 4
+    },
+    "output_summary": "{'success': True, 'filepath': 'test_cases/evidence/case002/ransom_note.txt', 'total_strings': 5, 'suspicious_strings': [], 'all_strings_sample': ['YOUR FILES HAVE BEEN ENCRYPTED', 'Send 0.5 BTC to: 1A2b3C4d5E6f7G8h9I0j', 'Contact: decrypt@darkweb.onion', 'Your unique ID: ABCD-1234-EFGH-5678', 'Time remaining: 71:45:33']}",
+    "success": true
+  },
+  {
+    "timestamp": "2026-06-05T09:55:42.989531",
+    "session_id": "20260605_095538",
+    "tool": "search_iocs",
+    "inputs": {
+      "filepath": "test_cases/evidence/case002/ransom_note.txt"
+    },
+    "output_summary": "{'success': True, 'filepath': 'test_cases/evidence/case002/ransom_note.txt', 'suspicious_ips': [], 'urls': [], 'registry_keys': [], 'emails': ['decrypt@darkweb.onion'], 'total_iocs_found': 0}",
+    "success": true
+  },
+  {
+    "timestamp": "2026-06-05T09:55:42.990115",
+    "session_id": "20260605_095538",
+    "tool": "get_file_hash",
+    "inputs": {
+      "filepath": "test_cases/evidence/case002/network_traffic.txt"
+    },
+    "output_summary": "{'success': True, 'filepath': 'test_cases/evidence/case002/network_traffic.txt', 'md5': '74d2be99ae17f8980977977e5a6b44bb', 'sha256': 'ca4e0a30ef4cf54c43a8bec1acc4106d1d0710a8bdceda8f457948720f4a8fec', 'size_bytes': 285, 'timestamp': '2026-06-05T09:55:42.990106'}",
+    "success": true
+  },
+  {
+    "timestamp": "2026-06-05T09:55:42.990416",
+    "session_id": "20260605_095538",
+    "tool": "analyze_file_metadata",
+    "inputs": {
+      "filepath": "test_cases/evidence/case002/network_traffic.txt"
+    },
+    "output_summary": "{'success': True, 'filepath': 'test_cases/evidence/case002/network_traffic.txt', 'size_bytes': 285, 'created': '2026-06-05T09:49:58.841422', 'modified': '2026-06-05T09:49:58.841422', 'accessed': '2026-06-05T09:49:59.537232', 'timestomp_suspected': False, 'time_diff_seconds': 0.0, 'extension': '.txt', 'is_hidden': False}",
+    "success": true
+  },
+  {
+    "timestamp": "2026-06-05T09:55:42.990814",
+    "session_id": "20260605_095538",
+    "tool": "extract_strings",
+    "inputs": {
+      "filepath": "test_cases/evidence/case002/network_traffic.txt",
+      "min_length": 4
+    },
+    "output_summary": "{'success': True, 'filepath': 'test_cases/evidence/case002/network_traffic.txt', 'total_strings': 8, 'suspicious_strings': [], 'all_strings_sample': ['Network capture analysis - 2024-04-20 03:10:00', 'Suspicious connections:', '  185.220.101.99:443 TOR exit node', '  192.168.1.105:445 SMB lateral movement', '  10.0.0.1:3389 RDP brute force', 'Data exfiltrated: 2.3 GB before encryption', 'First seen: 2024-04-20 02:58:11', 'Last seen: 2024-04-20 03:15:22']}",
+    "success": true
+  },
+  {
+    "timestamp": "2026-06-05T09:55:42.991184",
+    "session_id": "20260605_095538",
+    "tool": "search_iocs",
+    "inputs": {
+      "filepath": "test_cases/evidence/case002/network_traffic.txt"
+    },
+    "output_summary": "{'success': True, 'filepath': 'test_cases/evidence/case002/network_traffic.txt', 'suspicious_ips': ['185.220.101.99'], 'urls': [], 'registry_keys': [], 'emails': [], 'total_iocs_found': 1}",
+    "success": true
+  },
+  {
+    "timestamp": "2026-06-05T09:55:42.991728",
+    "session_id": "20260605_095538",
+    "tool": "get_file_hash",
+    "inputs": {
+      "filepath": "test_cases/evidence/case002/encrypted_files.txt"
+    },
+    "output_summary": "{'success': True, 'filepath': 'test_cases/evidence/case002/encrypted_files.txt', 'md5': '7ffafc214d7ff2fccb859117d03d161f', 'sha256': '0ec7b557235cde4738ca031d1b1c9bfde9e39137e246f574b7d40d50aa18306f', 'size_bytes': 247, 'timestamp': '2026-06-05T09:55:42.991723'}",
+    "success": true
+  },
+  {
+    "timestamp": "2026-06-05T09:55:42.991991",
+    "session_id": "20260605_095538",
+    "tool": "analyze_file_metadata",
+    "inputs": {
+      "filepath": "test_cases/evidence/case002/encrypted_files.txt"
+    },
+    "output_summary": "{'success': True, 'filepath': 'test_cases/evidence/case002/encrypted_files.txt', 'size_bytes': 247, 'created': '2026-06-05T09:49:44.303829', 'modified': '2026-06-05T09:49:44.303829', 'accessed': '2026-06-05T09:49:45.688667', 'timestomp_suspected': False, 'time_diff_seconds': 0.0, 'extension': '.txt', 'is_hidden': False}",
+    "success": true
+  },
+  {
+    "timestamp": "2026-06-05T09:55:42.992322",
+    "session_id": "20260605_095538",
+    "tool": "extract_strings",
+    "inputs": {
+      "filepath": "test_cases/evidence/case002/encrypted_files.txt",
+      "min_length": 4
+    },
+    "output_summary": "{'success': True, 'filepath': 'test_cases/evidence/case002/encrypted_files.txt', 'total_strings': 7, 'suspicious_strings': [], 'all_strings_sample': ['Files encrypted by ransomware - 2024-04-20 03:15:22', 'Total files encrypted: 1337', 'Extensions affected: .docx .xlsx .pdf .jpg .png', 'Ransom note dropped: README_DECRYPT.txt', 'Bitcoin wallet: 1A2b3C4d5E6f7G8h9I0j', 'Ransom amount: 0.5 BTC', 'Deadline: 72 hours']}",
+    "success": true
+  },
+  {
+    "timestamp": "2026-06-05T09:55:42.992653",
+    "session_id": "20260605_095538",
+    "tool": "search_iocs",
+    "inputs": {
+      "filepath": "test_cases/evidence/case002/encrypted_files.txt"
+    },
+    "output_summary": "{'success': True, 'filepath': 'test_cases/evidence/case002/encrypted_files.txt', 'suspicious_ips': [], 'urls': [], 'registry_keys': [], 'emails': [], 'total_iocs_found': 0}",
+    "success": true
+  },
+  {
+    "timestamp": "2026-06-05T09:55:42.993156",
+    "session_id": "20260605_095538",
+    "tool": "get_file_hash",
+    "inputs": {
+      "filepath": "test_cases/evidence/case002/system_state.txt"
+    },
+    "output_summary": "{'success': True, 'filepath': 'test_cases/evidence/case002/system_state.txt', 'md5': 'bffdcdeb971f96ade132b704974d4e3d', 'sha256': '341e4f724e56696533c6e40e53ad61aab8a870802032a80b03cb0bc8efd39833', 'size_bytes': 261, 'timestamp': '2026-06-05T09:55:42.993152'}",
+    "success": true
+  },
+  {
+    "timestamp": "2026-06-05T09:55:42.993372",
+    "session_id": "20260605_095538",
+    "tool": "analyze_file_metadata",
+    "inputs": {
+      "filepath": "test_cases/evidence/case002/system_state.txt"
+    },
+    "output_summary": "{'success': True, 'filepath': 'test_cases/evidence/case002/system_state.txt', 'size_bytes': 261, 'created': '2026-06-05T09:50:42.654308', 'modified': '2026-06-05T09:50:42.654308', 'accessed': '2026-06-05T09:50:44.148908', 'timestomp_suspected': False, 'time_diff_seconds': 0.0, 'extension': '.txt', 'is_hidden': False}",
+    "success": true
+  },
+  {
+    "timestamp": "2026-06-05T09:55:42.993678",
+    "session_id": "20260605_095538",
+    "tool": "extract_strings",
+    "inputs": {
+      "filepath": "test_cases/evidence/case002/system_state.txt",
+      "min_length": 4
+    },
+    "output_summary": "{'success': True, 'filepath': 'test_cases/evidence/case002/system_state.txt', 'total_strings': 9, 'suspicious_strings': [], 'all_strings_sample': ['System state at ransomware execution', 'Hostname: FILESERVER-01', 'OS: Windows Server 2019', 'Suspicious process: svchost32.exe PID 4892', 'Shadow copies deleted: YES', 'Backup files deleted: YES', 'Firewall disabled: YES', 'Antivirus disabled: YES', 'Last backup: 2024-04-18 23:00:00']}",
+    "success": true
+  },
+  {
+    "timestamp": "2026-06-05T09:55:42.993969",
+    "session_id": "20260605_095538",
+    "tool": "search_iocs",
+    "inputs": {
+      "filepath": "test_cases/evidence/case002/system_state.txt"
+    },
+    "output_summary": "{'success': True, 'filepath': 'test_cases/evidence/case002/system_state.txt', 'suspicious_ips': [], 'urls': [], 'registry_keys': [], 'emails': [], 'total_iocs_found': 0}",
+    "success": true
+  },
+  {
+    "timestamp": "2026-06-05T09:55:42.994467",
+    "session_id": "20260605_095538",
+    "tool": "check_persistence_mechanisms",
+    "inputs": {
+      "dirpath": "test_cases/evidence/case002"
+    },
+    "output_summary": "{'success': True, 'dirpath': 'test_cases/evidence/case002', 'persistence_indicators_found': 0, 'indicators': []}",
+    "success": true
+  }
+]
